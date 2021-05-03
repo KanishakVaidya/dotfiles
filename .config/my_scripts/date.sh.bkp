@@ -1,0 +1,6 @@
+echo " $(date '+ %a %b %d    %H:%M') "
+
+case $BLOCK_BUTTON in
+	1) cal -3 | rofi -dmenu -location 3 -yoffset 20 -width 40 -lines 8 -theme flat-orange.rasi -theme_str ;;
+	3) cal -v $(date +%Y) | rofi -dmenu -location 3 -yoffset 20 -width 40 -lines 45 -theme flat-orange.rasi -selected-row $(expr \( \( $(date +%m) - 1 \) / 3 \) \* 9 + $(date +%w) + 3) ;;
+esac

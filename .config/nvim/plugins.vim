@@ -1,0 +1,26 @@
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'itchyny/lightline.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'arcticicestudio/nord-vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'chriskempson/base16-vim'
+Plug 'fcpg/vim-waikiki' 
+call plug#end()
+
+"""""""""""""""" itchyny/lightline """"""""""""""""
+set noshowmode " -- INSERT -- is unnecessary
+
+"""""""""""""""" neoclide/coc """"""""""""""""
+source ~/.config/nvim/plug-config/coc.vim
+
+"""""""""""""""" tomasiser/vim-code-dark """"""""""""""""
+" colorscheme codedark
+" colorscheme nord
+let base16colorspace=256
+set termguicolors
+colorscheme base16-classic-dark
+
+"""""""""""""""" fcpg/vim-waikiki """"""""""""""""
+let g:waikiki_roots = ['~/doc/.wiki/']
+let maplocalleader = "\<F7>"
+let g:waikiki_default_maps = 1
