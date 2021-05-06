@@ -22,10 +22,11 @@ separator_block_width=3
 # interval=once
 
 [Brightness]
-command=~/.config/my_scripts/brightness.sh
+command=~/.config/my_scripts/amd_bl.sh
 interval=once
 color=#111111
 background=#ed8712
+signal=11
 
 [Language]
 command=~/.config/my_scripts/lang.sh

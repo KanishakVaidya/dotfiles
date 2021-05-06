@@ -29,6 +29,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+bindsym XF86MonBrightnessUp exec ~/.config/my_scripts/amd_bl.sh 'increase' && pkill -SIGRTMIN+11 i3blocks
+
+bindsym XF86MonBrightnessDown exec ~/.config/my_scripts/amd_bl.sh 'decrease' && pkill -SIGRTMIN+11 i3blocks
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
