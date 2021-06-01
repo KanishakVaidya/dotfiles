@@ -32,6 +32,7 @@ export FZF_DEFAULT_COMMAND='find .'
 export FZF_CTRL_T_COMMAND='find .'
 
 alias ls="ls --color=auto"
+alias lsa="ls -a --color=auto"
 alias ll="ls -lh --color=auto"
 alias lla="ls -lha --color=auto"
 alias vim="nvim"

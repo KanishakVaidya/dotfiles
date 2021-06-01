@@ -7,13 +7,6 @@ noremap <C-down> <C-W>-
 noremap <C-right> <C-W>>
 noremap <C-left> <C-W><
 
-
-au FileType tex noremap j gj
-au FileType tex noremap k gk
-au FileType tex noremap $ g$
-au FileType tex noremap 0 g0
-
-
 " Surround
 function! Surround()
     let sur = nr2char(getchar())

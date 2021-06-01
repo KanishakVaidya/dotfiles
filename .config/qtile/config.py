@@ -33,6 +33,8 @@ from libqtile.lazy import lazy
 
 mod = "mod4"
 terminal = 'alacritty'
+browser = 'firefox'
+filebrowser = 'dolphin'
 
 @hook.subscribe.startup_once
 def autostart():
@@ -102,13 +104,13 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key([mod, "shift"], "Return", 
-        lazy.spawn("firefox"),
+        lazy.spawn(browser),
         desc="Launch Firefox Browser"),
     Key([mod], "Return", 
         lazy.spawn(terminal), 
         desc="Launch terminal"),
     Key([mod], "e", 
-        lazy.spawn("dolphin"), 
+        lazy.spawn(filebrowser), 
         desc="Launch File Manager"),
     
     # My KeyBuindings

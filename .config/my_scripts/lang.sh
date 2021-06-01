@@ -15,8 +15,8 @@ esac
 echo "  $(setxkbmap -query | awk '/layout/{print $2}') "
 echo
 if [[ $(xset q | awk '/Caps Lock/{print $4}') == 'off' ]]; then
-	echo \#000000
 	echo \#ff00ff
 else
+	echo \#111111
 	echo \#ff00ff
 fi
