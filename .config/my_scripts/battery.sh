@@ -4,10 +4,10 @@ stat=$(cat /sys/class/power_supply/BAT0/status)
 levl=$(cat /sys/class/power_supply/BAT0/capacity)
 case $stat in
 	Full) echo "  $levl% " ;;
-	Charging) echo "  $levl% "; echo ; echo \#0044ff  ; echo \#111111 ;;
+	Charging) echo "  $levl% "; echo ; echo \#0044ff ; echo \#111111 ;;
 	Discharging)
 		if [[ levl -lt 20  ]]; then
-			notify-send -u critical "Main LOW hoon. Mujhe bchao" -a BATTERY -t 30000
+			notify-send -u critical "Bhagwan Ke Naam pe Utha le re baba" -a BATTERY -t 30000
 			echo "  $levl% "
 			echo
 			echo \#ff4500

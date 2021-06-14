@@ -40,16 +40,6 @@ bindsym XF86KbdBrightnessDown exec ~/.config/my_scripts/keyboard_bl.sh 'dec'
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec alacritty
-
-# start a browser
-bindsym $mod+Shift+Return exec firefox
-bindsym $mod+Control+Return exec firefox --private-window
-
-# start file explorer
-bindsym $mod+e exec dolphin
-
 # kill focused window
 bindsym $mod+q kill
 
@@ -241,6 +231,16 @@ exec --no-startup-id clipit
 # exec --no-startup-id udiskie
 
 # My KeyBuindings
+# start a terminal
+bindsym $mod+Return exec alacritty
+# start a browser
+bindsym $mod+Shift+Return exec firefox
+bindsym $mod+Control+Return exec firefox --private-window
+# start file explorer
+bindsym $mod+e exec dolphin
+# Launch emacs
+bindsym $mod+t exec emacs
+
 bindsym $mod+p exec /home/keshav/.config/my_scripts/displays.sh
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
 bindsym $mod+space exec "rofi -modi AppImage:~/.config/my_scripts/rofi_appimage.sh,drun,run -show drun -sidebar-mode -show-icons true"
