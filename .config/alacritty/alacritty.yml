@@ -204,6 +204,32 @@ schemes:
           cyan:    '0x4ec9b0'
           white:   '0xd0d0d0'
 
+    garuda: &garuda
+        primary:
+          background: '0x0a1124'
+          foreground: '0xeec49a'
+        cursor:
+          text:       '0x0a1124'
+          cursor:     '0xeec49a'
+        normal:
+          black:      '0x0a1124'
+          red:        '0x5F4149'
+          green:      '0xEB3247'
+          yellow:     '0xBC4349'
+          blue:       '0xF35645'
+          magenta:    '0xF6A73B'
+          cyan:       '0xFAD32F'
+          white:      '0xeec49a'
+        bright:
+          black:      '0xa6896b'
+          red:        '0x5F4149'
+          green:      '0xEB3247'
+          yellow:     '0xBC4349'
+          blue:       '0xF35645'
+          magenta:    '0xF6A73B'
+          cyan:       '0xFAD32F'
+          white:      '0xeec49a'
+
     Molokai_Dark: &Molokai_Dark
         # Default colors
         primary:
@@ -379,6 +405,7 @@ schemes:
             white:      '#828997' # mono-2
 
 colors: *Base16
+# colors: *garuda
 # Colors (Tomorrow Night)
 # colors:
 #    Default colors
