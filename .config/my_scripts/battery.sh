@@ -6,7 +6,7 @@ case $stat in
 	Full) echo "  $levl% " ;;
 	Charging) echo "  $levl% "; echo ; echo \#0044ff ; echo \#111111 ;;
 	Discharging)
-		if [[ levl -lt 4  ]]; then
+		if [[ levl -lt 5  ]]; then
             notify-send -u critical "Khud e utha jana ab mene ek minute ke andar $(shutdown -P +1). shutdown -c hi bcha skta tujhe ab" -a BATTERY -t 30000
 			echo "  $levl% "
 			echo
