@@ -16,6 +16,7 @@
 (after! org
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (setq org-directory "~/.org/")
+  (setq org-src-window-setup 'split-window-right)
   (setq org-highlight-latex-and-related '(latex script entities)))
 
 (setq shell-file-name "/usr/bin/bash")

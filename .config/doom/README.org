@@ -51,6 +51,7 @@ Maths should also be highlighted in Org-mode, and by default codeblocks should t
 (after! org
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (setq org-directory "~/.org/")
+  (setq org-src-window-setup 'split-window-right)
   (setq org-highlight-latex-and-related '(latex script entities)))
 #+end_src
 
