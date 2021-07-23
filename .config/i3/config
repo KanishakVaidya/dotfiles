@@ -243,7 +243,7 @@ bindsym $mod+t exec emacs
 
 bindsym $mod+p exec /home/keshav/.config/my_scripts/displays.sh
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+space exec "rofi -modi AppImage:~/.config/my_scripts/rofi_appimage.sh,drun,run -show drun -sidebar-mode -show-icons true"
+bindsym $mod+space exec "rofi -modi AppImage:~/.config/my_scripts/rofi_appimage.sh,drun,run -show drun -sidebar-mode -show-icons true -disable-history"
 bindsym $mod+Shift+space exec "rofi -modi Search:~/.config/my_scripts/search.sh -show Search -theme flat-orange"
 bindsym $mod+n workspace next
 bindsym $mod+b workspace prev
