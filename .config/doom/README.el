@@ -20,3 +20,13 @@
   (setq org-highlight-latex-and-related '(latex script entities)))
 
 (setq shell-file-name "/usr/bin/bash")
+
+(setq font-latex-fontify-script nil)
+(add-to-list 'load-path "/home/keshav/doc/programs/latex/")
+(require 'lsp-latex)
+(with-eval-after-load "tex-mode"
+ (add-hook 'tex-mode-hook 'lsp)
+ (add-hook 'latex-mode-hook 'lsp))
+;; For bibtex
+(with-eval-after-load "bibtex"
+ (add-hook 'bibtex-mode-hook 'lsp))
