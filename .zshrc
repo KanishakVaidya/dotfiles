@@ -28,8 +28,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-export FZF_DEFAULT_COMMAND='find .'
-export FZF_CTRL_T_COMMAND='find .'
+# export FZF_DEFAULT_COMMAND='find .'
+# export FZF_CTRL_T_COMMAND='find .'
 
 alias ls="ls --color=auto"
 alias lsa="ls -a --color=auto"
