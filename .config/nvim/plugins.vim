@@ -6,6 +6,9 @@ Plug 'chriskempson/base16-vim'
 Plug 'fcpg/vim-waikiki' 
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 """""""""""""""" itchyny/lightline """"""""""""""""

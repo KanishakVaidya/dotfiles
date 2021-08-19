@@ -36,12 +36,12 @@ There are two ways to load a theme. Both assume the theme is installed and
 available. You can either set `doom-theme' or manually load a theme with the
 `load-theme' function. This is the default:
 #+begin_src emacs-lisp
-(setq doom-theme 'doom-one)
+(setq doom-theme 'base16-classic-dark)
 #+end_src
 
 Transparency can be set in emacs windows ref:emacswiki.org/emacs/TransparentEmacs
 #+begin_src emacs-lisp
-(set-frame-parameter (selected-frame) 'alpha '(98 95))
+(set-frame-parameter (selected-frame) 'alpha '(98 97))
 #+end_src
 
 * Org Mode Configuration
@@ -70,6 +70,7 @@ To get information about any of these functions/macros, move the cursor over the
 (setq shell-file-name "/usr/bin/bash")
 #+end_src
 
+* Language Configurations
 ** LaTeX configuration
 LaTeX show hedious super and subscripts. I want to see plain text and don't want to see ^v as a v hanging on air
 #+begin_src emacs-lisp
@@ -82,4 +83,15 @@ LaTeX show hedious super and subscripts. I want to see plain text and don't want
 ;; For bibtex
 (with-eval-after-load "bibtex"
  (add-hook 'bibtex-mode-hook 'lsp))
+#+end_src
+
+** Python Configuration
+Pyright language Server
+#+begin_src emacs-lisp
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
+
 #+end_src

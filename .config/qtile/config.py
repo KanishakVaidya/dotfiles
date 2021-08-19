@@ -55,8 +55,6 @@ keys = [
     Key([mod], "k", 
         lazy.layout.up(), 
         desc="Move focus up"),
-    # Key([mod], "space", lazy.layout.next(),
-    #     desc="Move window focus to other window"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -227,8 +225,8 @@ screens = [
                 ),
                 widget.CurrentLayout(foreground = "#90a959"),
                 widget.Sep(padding = 4),
-                widget.Systray(),
-                widget.Sep(padding = 4),
+#                widget.Systray(),
+#                widget.Sep(padding = 4),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
             ],
             24,

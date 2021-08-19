@@ -9,9 +9,9 @@
 
 (setq display-line-numbers-type t)
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'base16-classic-dark)
 
-(set-frame-parameter (selected-frame) 'alpha '(98 95))
+(set-frame-parameter (selected-frame) 'alpha '(98 97))
 
 (after! org
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -30,3 +30,9 @@
 ;; For bibtex
 (with-eval-after-load "bibtex"
  (add-hook 'bibtex-mode-hook 'lsp))
+
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred

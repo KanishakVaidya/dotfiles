@@ -51,3 +51,5 @@
 
 (package! org-bullets)
 (package! lsp-latex)
+(package! lsp-pyright)
+(package! base16-theme)
