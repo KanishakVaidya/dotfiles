@@ -28,6 +28,11 @@ window {
 //   y-offset: 20%;
 }
 
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
 mainbox {
    background-color: @blackdarkest;
    spacing:0px;
@@ -145,3 +150,4 @@ case-indicator {
    text-color:@maincolor;
    background-color:@blackwidget;
 }
+

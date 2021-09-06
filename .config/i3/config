@@ -241,9 +241,23 @@ bindsym $mod+e exec dolphin
 # Launch emacs
 bindsym $mod+t exec emacs
 
+bindsym $mod+o mode "$frequentapps"
+set $frequentapps (1)Signal, (2)SMPlayer, (3)Kate, (4)Brave-Browser, (5)Okular 
+mode "$frequentapps" {
+    bindsym 1 exec signal-desktop , mode "default"
+    bindsym 2 exec smplayer , mode "default"
+    bindsym 3 exec kate , mode "default"
+    bindsym 4 exec brave , mode "default"
+    bindsym 5 exec okular , mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 bindsym $mod+p exec /home/keshav/.config/my_scripts/displays.sh
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+space exec "rofi -modi AppImage:~/.config/my_scripts/rofi_appimage.sh,drun,run -show drun -sidebar-mode -show-icons true -disable-history"
+bindsym $mod+space exec "rofi -modi AppImage:~/.config/my_scripts/rofi_appimage.sh,drun,run -show drun -sidebar-mode -show-icons true -location 0 -yoffset -200"
 bindsym $mod+Shift+space exec "rofi -modi Search:~/.config/my_scripts/search.sh -show Search -theme flat-orange"
 bindsym $mod+n workspace next
 bindsym $mod+b workspace prev
