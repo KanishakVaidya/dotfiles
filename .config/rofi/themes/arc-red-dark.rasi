@@ -37,6 +37,10 @@
     background-color: @background;
     padding:          5;
 }
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
 #mainbox {
     border:  0;
     padding: 0;

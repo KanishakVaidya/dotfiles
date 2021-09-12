@@ -38,6 +38,10 @@ window {
     border:           0;
     padding:          8;
 }
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
 mainbox {
     border:  0;
     padding: 0;

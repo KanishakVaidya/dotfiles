@@ -39,6 +39,11 @@ window {
 	background-color: #263238CC; /*base00 + CC (80% opacity)*/
 }
 
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
 mainbox {
 	children: [inputbar, message, mode-switcher, listview];
 	spacing: 30px;

@@ -4,7 +4,7 @@ option=$(echo "Primary only
 Secondary only
 Mirror
 Extend Secondary to RIGHT
-Extend Secondary to LEFT" | rofi -dmenu -theme material.rasi -theme-str 'listview { scrollbar: false; }' -lines 6)
+Extend Secondary to LEFT" | rofi -dmenu -theme material.rasi -theme-str 'listview { scrollbar: false; lines: 5;}')
 
 if [ "$option" == "Primary only" ]
 then

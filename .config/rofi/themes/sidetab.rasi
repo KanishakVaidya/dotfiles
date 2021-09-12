@@ -51,6 +51,11 @@ window {
 	children:	 [mainbox];
 }
 
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
 mainbox {
 	spacing:  0.8em;
 	children: [ entry,listview,mode-switcher ];

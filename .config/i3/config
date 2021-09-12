@@ -98,7 +98,7 @@ set $ws4 "4 : "
 set $ws5 "5 : " 
 set $ws6 "6 : "
 set $ws7 "7 : "
-set $ws8 " 8 "
+set $ws8 "8 : "
 set $ws9 " 9 "
 set $ws10 " 10 "
 
@@ -171,12 +171,22 @@ bindsym $mod+r mode "resize"
 
 # COLORS
 
+set $back    "#151515"
+set $fore    "#d0d0d0"
+set $black   "#505050"
+set $red     "#ac4142"
+set $green   "#90a959"
+set $yellow  "#f4bf75"
+set $blue    "#6a9fb5"
+set $magenta "#aa759f"
+set $cyan    "#75b5aa"
+set $white   "#f5f5f5"
 # set $focused	"#2b4f60"
 # set $focused	"#00bfff"
-set $focused	"#1abc9c"
-set $inactive 	"#111111"
-set $urgent 	"#dd0000"
-set $binding 	"#990000"
+# set $focused	"#1abc9c"
+# set $inactive 	"#111111"
+# set $urgent 	"#dd0000"
+# set $binding 	"#990000"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -184,22 +194,22 @@ bar {
 	font pango:Font Awesome 5 Free, Hurmit Nerd Font Mono 11
         status_command i3blocks
     	colors {
-        	background #111111
+        	background $back
         	statusline #ffffff
         	separator #999999
 #		<colorclass> 		<border> 	<background> 	<text>
-        	focused_workspace  	$focused 	$focused 	#000000
-        	active_workspace   	#5f676a 	#5f676a 	#ffffff
-        	inactive_workspace 	$inactive	$inactive 	#aaaaaa
-        	urgent_workspace   	$urgent		$urgent 	#ffffff
-        	binding_mode       	$binding	$binding 	#ffffff
+        	focused_workspace  	$cyan 	    $cyan	    $back
+        	active_workspace   	$black 	    $black   	$fore
+        	inactive_workspace 	$back       $back       $fore
+        	urgent_workspace   	$red		$red     	$back
+        	binding_mode       	$red	    $red    	$back
     	}
 }
 # class                 border  	backgr. 	text		indicator 	child_border
-client.focused          $focused 	$focused 	#000000	 	#00ff00   	$focused
-client.focused_inactive #5f676a 	#5f676a 	#ffffff 	#484e50   	#5f676a
-client.unfocused        $inactive	$inactive 	#888888 	#292d2e   	#222222
-client.urgent           $urgent		$urgent 	#ffffff 	$urgent		$urgent
+client.focused          $cyan 	    $cyan 	    $back	 	$red    	$cyan
+client.focused_inactive $back    	$back   	$fore 	    $red    	$back
+client.unfocused        $black	    $black 	    $fore       $red       $black
+client.urgent           $red  		$red 	    $back   	$red		$red
 client.placeholder      #000000 	#0c0c0c 	#ffffff 	#000000   	#0c0c0c
 
 client.background       #ffffff
@@ -242,13 +252,14 @@ bindsym $mod+e exec dolphin
 bindsym $mod+t exec emacs
 
 bindsym $mod+o mode "$frequentapps"
-set $frequentapps (1)Signal, (2)SMPlayer, (3)Kate, (4)Brave-Browser, (5)Okular 
+set $frequentapps (1)Signal, (2)SMPlayer, (3)Kate, (4)Brave-Browser, (5)Brave(Tor) (6)Okular 
 mode "$frequentapps" {
     bindsym 1 exec signal-desktop , mode "default"
     bindsym 2 exec smplayer , mode "default"
     bindsym 3 exec kate , mode "default"
     bindsym 4 exec brave , mode "default"
-    bindsym 5 exec okular , mode "default"
+    bindsym 5 exec brave --tor , mode "default"
+    bindsym 6 exec okular , mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
