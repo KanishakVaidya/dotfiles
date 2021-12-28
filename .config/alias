@@ -1,0 +1,10 @@
+alias ls="exa --color=auto"
+alias lsa="exa -a --color=auto"
+alias ll="exa -lh --color=auto"
+alias lla="exa -lha --color=auto"
+alias vim="nvim"
+alias cp="cp -i"                          # confirm before overwriting something
+alias dotgit='/usr/bin/git --git-dir=$HOME/doc/.dotfiles/ --work-tree=$HOME'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'

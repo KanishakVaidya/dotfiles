@@ -179,7 +179,7 @@ font:
 
 import:
   -  ~/.config/alacritty/colorschemes/base16.yml
-  # -  ~/.config/alacritty/colorschemes/navy-and-ivory.yml
+  # -  ~/.config/alacritty/colorschemes/darkplus.yml
 
   # Cursor colors
   #

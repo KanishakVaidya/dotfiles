@@ -132,21 +132,6 @@ ex ()
 
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
+source $HOME/.config/alias
 export FZF_DEFAULT_COMMAND='find .'
 export FZF_CTRL_T_COMMAND='find .'
-
-alias ls='ls --color=auto'
-alias lsa='ls -a --color=auto'
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias fgrep='fgrep --colour=auto'
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
-alias more=less
-
-alias ll="ls -l"
-alias lla="ls -la"
-alias vim=nvim
-alias dotgit='/usr/bin/git --git-dir=$HOME/doc/.dotfiles/ --work-tree=$HOME'

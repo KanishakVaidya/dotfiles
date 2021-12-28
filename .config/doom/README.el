@@ -19,6 +19,19 @@
   (setq org-src-window-setup 'split-window-right)
   (setq org-highlight-latex-and-related '(latex script entities)))
 
+(setq org-publish-use-timestamps-flag nil)
+(setq org-export-with-broken-links t)
+(setq org-publish-project-alist
+      '(("PMRF.progress"
+         :base-directory "~/doc/sites/test-site/"
+         :base-extension "org"
+         :publishing-directory "~/doc/sites/test-site/html/"
+         :recursive t
+         :exclude "org-html-themes/.*"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :auto-preamble t)))
+
 (setq shell-file-name "/usr/bin/bash")
 
 (setq font-latex-fontify-script nil)

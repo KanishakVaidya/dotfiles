@@ -202,7 +202,7 @@ bar {
         	active_workspace   	$black 	    $black   	$fore
         	inactive_workspace 	$back       $back       $fore
         	urgent_workspace   	$red		$red     	$back
-        	binding_mode       	$red	    $red    	$back
+        	binding_mode       	$yellow	    $yellow    	$back
     	}
 }
 # class                 border  	backgr. 	text		indicator 	child_border
@@ -232,6 +232,7 @@ for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
+exec --no-startup-id blueman-applet
 # exec --no-startup-id cbatticon
 exec --no-startup-id "feh --bg-fill --randomize ~/pic/.wall/*"
 exec --no-startup-id picom
@@ -246,8 +247,9 @@ bindsym $mod+Return exec alacritty
 # start a browser
 bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Control+Return exec firefox --private-window
+bindsym $mod+Mod1+Return exec brave --tor
 # start file explorer
-bindsym $mod+e exec dolphin
+bindsym $mod+e exec pcmanfm-qt
 # Launch emacs
 bindsym $mod+t exec emacs
 
@@ -268,7 +270,8 @@ mode "$frequentapps" {
 
 bindsym $mod+p exec /home/keshav/.config/my_scripts/displays.sh
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+space exec "rofi -modi AppImage:~/.config/my_scripts/rofi_appimage.sh,drun,run -show drun -sidebar-mode -show-icons true -location 0 -yoffset -200"
+bindsym $mod+space exec "rofi -modi AppImage:~/.config/my_scripts/rofi_appimage.sh,drun,run -show drun -sidebar-mode -show-icons true" 
+# -location 0 -yoffset -200"
 bindsym $mod+Shift+space exec "rofi -modi Search:~/.config/my_scripts/search.sh -show Search -theme flat-orange"
 bindsym $mod+n workspace next
 bindsym $mod+b workspace prev

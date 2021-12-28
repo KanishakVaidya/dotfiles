@@ -55,6 +55,22 @@ Maths should also be highlighted in Org-mode, and by default codeblocks should t
   (setq org-highlight-latex-and-related '(latex script entities)))
 #+end_src
 
+This is the configuration for org-publish, that enable us to make HTML files from org documents
+#+begin_src emacs-lisp
+(setq org-publish-use-timestamps-flag nil)
+(setq org-export-with-broken-links t)
+(setq org-publish-project-alist
+      '(("PMRF.progress"
+         :base-directory "~/doc/sites/test-site/"
+         :base-extension "org"
+         :publishing-directory "~/doc/sites/test-site/html/"
+         :recursive t
+         :exclude "org-html-themes/.*"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :auto-preamble t)))
+#+end_src
+
 * Other Configuration
 Here are some additional functions/macros that could help you configure Doom:
 

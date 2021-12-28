@@ -18,10 +18,10 @@ set noshowmode " -- INSERT -- is unnecessary
 source ~/.config/nvim/plug-config/coc.vim
 
 """""""""""""""" tomasiser/vim-code-dark """"""""""""""""
-" colorscheme codedark
 " colorscheme nord
 let base16colorspace=256
 set termguicolors
+" colorscheme codedark
 colorscheme base16-classic-dark
 
 """""""""""""""" fcpg/vim-waikiki """"""""""""""""

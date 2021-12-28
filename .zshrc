@@ -28,13 +28,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+source $HOME/.config/alias
 # export FZF_DEFAULT_COMMAND='find .'
 # export FZF_CTRL_T_COMMAND='find .'
-
-alias ls="ls --color=auto"
-alias lsa="ls -a --color=auto"
-alias ll="ls -lh --color=auto"
-alias lla="ls -lha --color=auto"
-alias vim="nvim"
-alias cp="cp -i"                          # confirm before overwriting something
-alias dotgit='/usr/bin/git --git-dir=$HOME/doc/.dotfiles/ --work-tree=$HOME'
