@@ -178,8 +178,8 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 import:
-  -  ~/.config/alacritty/colorschemes/base16.yml
-  # -  ~/.config/alacritty/colorschemes/darkplus.yml
+  # -  ~/.config/alacritty/colorschemes/base16.yml
+  -  ~/.config/alacritty/colorschemes/darkplus.yml
 
   # Cursor colors
   #

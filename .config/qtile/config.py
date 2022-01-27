@@ -34,7 +34,7 @@ from libqtile.lazy import lazy
 mod = "mod4"
 terminal = 'alacritty'
 browser = 'firefox'
-filebrowser = 'dolphin'
+filebrowser = 'pcmanfm-qt'
 
 @hook.subscribe.startup_once
 def autostart():

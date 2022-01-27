@@ -8,6 +8,7 @@ set scrolloff=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set cursorline
 filetype plugin indent on
 syntax on
 hi MatchParen cterm=bold ctermbg=none ctermfg=red   

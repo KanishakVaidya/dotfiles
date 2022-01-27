@@ -9,6 +9,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'folke/zen-mode.nvim'
 call plug#end()
 
 """""""""""""""" itchyny/lightline """"""""""""""""
@@ -21,8 +22,8 @@ source ~/.config/nvim/plug-config/coc.vim
 " colorscheme nord
 let base16colorspace=256
 set termguicolors
-" colorscheme codedark
-colorscheme base16-classic-dark
+colorscheme codedark
+" colorscheme base16-classic-dark
 
 """""""""""""""" fcpg/vim-waikiki """"""""""""""""
 let g:waikiki_roots = ['~/doc/.wiki/']

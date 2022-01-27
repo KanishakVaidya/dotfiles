@@ -36,6 +36,7 @@ signal=10
 [Battery]
 command=~/.config/my_scripts/battery.sh
 interval=60
+background=#151515
 
 [datetime]
 command=~/.config/my_scripts/date.sh
