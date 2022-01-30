@@ -22,8 +22,8 @@ source ~/.config/nvim/plug-config/coc.vim
 " colorscheme nord
 let base16colorspace=256
 set termguicolors
-colorscheme codedark
-" colorscheme base16-classic-dark
+" colorscheme codedark
+colorscheme base16-gruvbox-dark-medium
 
 """""""""""""""" fcpg/vim-waikiki """"""""""""""""
 let g:waikiki_roots = ['~/doc/.wiki/']

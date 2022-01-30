@@ -27,3 +27,6 @@ case $changeto in
 esac
 
 awk '{print "  " $1 " "}' /sys/class/backlight/amdgpu_bl1/brightness
+echo
+awk '/color3:/ {print $2}' ~/.Xresources
+awk '/background:/ {print $2}' ~/.Xresources

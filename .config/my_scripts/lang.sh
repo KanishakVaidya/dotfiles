@@ -12,11 +12,14 @@ case $BLOCK_BUTTON in
 	1) toggle_lang ;;
 esac
 
+red=$(awk '/color1:/ {print $2}' ~/.Xresources)
+background=$(awk '/background:/ {print $2}' ~/.Xresources)
+
 echo "  $(setxkbmap -query | awk '/layout/{print $2}') "
 echo
 if [[ $(xset q | awk '/Caps Lock/{print $4}') == 'off' ]]; then
-	echo \#ac4142
+	echo $red
 else
-	echo \#151515
-	echo \#ac4142
+	echo $background
+	echo $red
 fi

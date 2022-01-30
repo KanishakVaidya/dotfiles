@@ -24,8 +24,6 @@ separator_block_width=3
 [Brightness]
 command=~/.config/my_scripts/amd_bl.sh
 interval=once
-color=#d28445
-background=#151515
 signal=11
 
 [Language]
@@ -41,5 +39,5 @@ background=#151515
 [datetime]
 command=~/.config/my_scripts/date.sh
 interval=30
-color=#6a9fb5
-background=#151515
+#color=#6a9fb5
+#background=#151515
