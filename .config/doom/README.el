@@ -9,7 +9,7 @@
 
 (setq display-line-numbers-type t)
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'base16-gruvbox-dark-medium)
 
 (set-frame-parameter (selected-frame) 'alpha '(98 97))
 

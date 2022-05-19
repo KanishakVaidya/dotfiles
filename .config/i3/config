@@ -206,7 +206,7 @@ bar {
     	}
 }
 # class                 border  	backgr. 	text		indicator 	child_border
-client.focused          $cyan 	    $cyan 	    $back	 	$red    	$cyan
+client.focused          $blue 	    $blue 	    $back	 	$red    	$blue
 client.focused_inactive $back    	$back   	$fore 	    $red    	$back
 client.unfocused        $black	    $black 	    $fore       $red       $black
 client.urgent           $red  		$red 	    $back   	$red		$red
@@ -216,10 +216,10 @@ client.background       #ffffff
 title_align center
 
 # Configuring Gaps
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 smart_gaps on
 smart_borders on
-gaps inner 8
+gaps inner 4
 gaps outer 0
 
 # configuring floating
@@ -236,7 +236,7 @@ exec --no-startup-id volumeicon
 exec --no-startup-id blueman-applet
 # exec --no-startup-id cbatticon
 exec --no-startup-id "feh --bg-fill --randomize ~/pic/.wall/*"
-# exec --no-startup-id "feh --bg-fill ~/pic/onedark.png"
+# exec --no-startup-id "$HOME/.fehbg"
 exec --no-startup-id picom
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id flameshot

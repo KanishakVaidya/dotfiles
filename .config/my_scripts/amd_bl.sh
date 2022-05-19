@@ -11,22 +11,22 @@ else
     	;;
     esac
 fi
-brightness=$(awk '{print}' /sys/class/backlight/amdgpu_bl1/brightness)
+brightness=$(awk '{print}' /sys/class/backlight/amdgpu_bl*/brightness)
 
 case $changeto in
 	'increase') 
 		if [[ $brightness -lt 255 ]]; then
-			echo $(awk "BEGIN {print $brightness + 5; exit}") > /sys/class/backlight/amdgpu_bl1/brightness ;
+			echo $(awk "BEGIN {print $brightness + 5; exit}") > /sys/class/backlight/amdgpu_bl*/brightness ;
 		fi
 	;;
 	'decrease') 
 		if [[ $brightness -gt 20 ]]; then
-			echo $(awk "BEGIN {print $brightness - 5; exit}") > /sys/class/backlight/amdgpu_bl1/brightness ;
+			echo $(awk "BEGIN {print $brightness - 5; exit}") > /sys/class/backlight/amdgpu_bl*/brightness ;
 		fi
 	;;
 esac
 
-awk '{print "  " $1 " "}' /sys/class/backlight/amdgpu_bl1/brightness
+awk '{print "  " $1 " "}' /sys/class/backlight/amdgpu_bl*/brightness
 echo
 awk '/color3:/ {print $2}' ~/.Xresources
 awk '/background:/ {print $2}' ~/.Xresources
