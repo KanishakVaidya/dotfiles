@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/keshav/doc/programs/octave/MAN_PIR.m'
+let g:netrw_dirhist_7='/home/keshav/doc/toots'
+let g:netrw_dirhist_6='/home/keshav/pc/PhD/Presentations/2021_04_Multi_Access_PIR/initiate'
+let g:netrw_dirhist_5='/home/keshav'
+let g:netrw_dirhist_4='/home/keshav/.config/nvim'
+let g:netrw_dirhist_3='/home/keshav/doc/sites/newsite/themes/mytheme/layouts/partials'
+let g:netrw_dirhist_2='/home/keshav/doc/sites/newsite/themes/mytheme/layouts'
+let g:netrw_dirhist_1='/home/keshav/doc/sites/newsite/themes/mytheme'
+let g:netrw_dirhist_0='/home/keshav/doc/sites/newsite/themes'
+let g:netrw_dirhist_9='/home/keshav/doc/sites/newsite'

@@ -1,0 +1,8 @@
+(map! :map LaTeX-mode-map
+      :leader
+      (:prefix ("l" . "LaTeX Option")
+      :desc "View PDF" "v" #'TeX-view
+      :desc "Compile PDF" "r" #'TeX-command-master "LaTeX" 'TeX-master-file
+      :desc "Show TOC" "=" #'reftex-toc
+      :desc "reftex-citations" "[" #'reftex-citation
+      :desc "reftex-labels" "(" #'reftex-label))
