@@ -9,4 +9,4 @@ configuration {
     display-name: "Applications";
   }
 }
-@theme "/home/keshav/.config/rofi/themes/oxide.rasi"
+@theme "~/.config/rofi/themes/oxide.rasi"
