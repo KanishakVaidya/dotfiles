@@ -42,10 +42,11 @@ Using org header properties for markdown headers.
 #+end_src
 * Org Mode
 ** Look and Feel
-Org mode should use bullets instead of asteriks
+Org mode should use bullets instead of asteriks and org mode should open with all heading folded
 #+begin_src emacs-lisp
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(setq org-startup-folded t)
 #+end_src
 
 org-edit-src-code should open a new window

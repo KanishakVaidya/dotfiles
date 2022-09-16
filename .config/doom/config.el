@@ -18,6 +18,7 @@
 
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(setq org-startup-folded t)
 
 (setq org-src-window-setup 'other-frame)
 

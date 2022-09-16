@@ -33,9 +33,6 @@ export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 
 # # $HOME/.Xauthority
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
- 
-# $HOME/.zcompdump
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 # $HOME/.histfile
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
