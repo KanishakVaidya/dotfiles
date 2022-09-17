@@ -59,6 +59,7 @@ alias cmatrix='cmatrix -ba'
 
 alias dotgit='/usr/bin/git --git-dir=$HOME/.config/my_dotfiles --work-tree=$HOME'
 
+export PATH=$HOME/.local/bin:$PATH
 export NOTES_DIR=$HOME/doc/notes
 
 # fuzzy-search through all available packages
