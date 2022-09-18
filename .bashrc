@@ -135,3 +135,6 @@ source /usr/share/fzf/completion.bash
 source $HOME/.config/alias.sh
 export FZF_DEFAULT_COMMAND='find .'
 export FZF_CTRL_T_COMMAND='find .'
+
+export STARSHIP_CONFIG=~/.config/starship/bash-prompt.toml
+eval "$(starship init bash)"
