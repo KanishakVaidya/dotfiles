@@ -1,29 +1,36 @@
 #!/bin/bash
 
-option=$(echo "Primary only
-Secondary only
-Mirror
-Extend Secondary to RIGHT
-Extend Secondary to LEFT" | rofi -dmenu -theme material.rasi -theme-str 'listview { scrollbar: false; lines: 5;}')
+displays=( )
 
-if [ "$option" == "Primary only" ]
+for display in $(xrandr | awk '/ connected / {print $1}')
+do
+    displays+=($display)
+done
+
+option=$(echo "${displays[0]} only
+${displays[1]} only
+Mirror
+${displays[0]} left of ${displays[1]}
+${displays[1]} left of ${displays[0]}" | rofi -dmenu -p "Choose display configuration" -theme material.rasi -theme-str 'listview { scrollbar: false; lines: 5;}')
+
+if [ "$option" == "${displays[0]} only" ]
 then
-	xrandr --output HDMI-1 --off --output eDP-1 --mode 1920x1080 
+	xrandr --output ${displays[1]} --off --output ${displays[0]} --mode 1920x1080
 	i3-msg restart
-elif [ "$option" == "Secondary only" ]
+elif [ "$option" == "${displays[1]} only" ]
 then
-	xrandr --output eDP-1 --off --output HDMI-1 --mode 1920x1080 
+	xrandr --output ${displays[0]} --off --output ${displays[1]} --mode 1920x1080
 	i3-msg restart
 elif [ "$option" == "Mirror" ]
 then
-	xrandr --output eDP-1 --mode 1920x1080 --output HDMI-1 --same-as eDP-1	
+	xrandr --output ${displays[0]} --mode 1920x1080 --output ${displays[1]} --same-as ${displays[0]}
 	i3-msg restart
-elif [ "$option" == "Extend Secondary to RIGHT" ]
+elif [ "$option" == "${displays[0]} left of ${displays[1]}" ]
 then
-	xrandr --output eDP-1 --mode 1920x1080 --output HDMI-1 --mode 1920x1080 --right-of eDP-1
+	xrandr --output ${displays[0]} --mode 1920x1080 --output ${displays[1]} --mode 1920x1080 --right-of ${displays[0]}
 	i3-msg restart
-elif [ "$option" == "Extend Secondary to LEFT" ]
+elif [ "$option" == "${displays[1]} left of ${displays[0]}" ]
 then
-	xrandr --output eDP-1 --mode 1920x1080 --output HDMI-1 --mode 1920x1080 --left-of eDP-1
+	xrandr --output ${displays[0]} --mode 1920x1080 --output ${displays[1]} --mode 1920x1080 --left-of ${displays[0]}
 	i3-msg restart
 fi

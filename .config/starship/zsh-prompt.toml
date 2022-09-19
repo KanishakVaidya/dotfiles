@@ -1,24 +1,29 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
+format="""
+[$directory](bold cyan)$git_branch$git_status$git_state$git_commit $fill $cmd_duration
+$character
+"""
+
+
 ## Make prompt a single line instead of two lines
-#[line_break]
-#disabled = true
+[line_break]
+disabled = false
 
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                         # The name of the module we are configuring is "character"
-success_symbol = "[❯](#00dd00)"  # The "success_symbol" is set to "➜" with color "bold green"
-error_symbol = "[❯](#ee0000)"  # The "success_symbol" is set to "➜" with color "bold green"
-vimcmd_symbol = "[❮](#00dd00)"  # The "success_symbol" is set to "➜" with color "bold green"
+[character]
+success_symbol = "[❯](#00dd00)"
+error_symbol = "[❯](#ee0000)"
+vimcmd_symbol = "[❮](#00dd00)"
 
-# Use custom format
-# format = """
-# [┌───────────────────>](bold green)
-# [│](bold green)$directory$rust$package
-# [└─>](bold green) """
+[directory]
+home_symbol = "ॐ "
+truncate_to_repo = false
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
+[username]
+show_always = true 
+disabled = false
+format = "[$userॐ]($style) "
 
-#❯
+[fill]
+symbol = " "

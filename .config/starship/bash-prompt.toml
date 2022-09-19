@@ -1,23 +1,26 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
-# Make prompt a single line instead of two lines
+format="""
+[$username$directory](bold cyan)$git_branch$git_status$git_state$git_commit $fill $cmd_duration
+$character
+"""
+## Make prompt a single line instead of two lines
 [line_break]
-disabled = true
+disabled = false
 
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                         # The name of the module we are configuring is "character"
-success_symbol = "[ॐ](#00dd00)"  # The "success_symbol" is set to "➜" with color "bold green"
-error_symbol = "[ॐ](#ee0000)"  # The "success_symbol" is set to "➜" with color "bold green"
+[character]
+success_symbol = "[ॐ](#00dd00) "
+error_symbol = "[ॐ](#ee0000) "
 
-# Use custom format
-# format = """
-# [┌───────────────────>](bold green)
-# [│](bold green)$directory
-# [└─>](bold green) """
+[directory]
+home_symbol = "~"
+truncate_to_repo = false
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
+[username]
+show_always = true 
+disabled = false
+format = "[$user@]($style) "
 
-#❯
+[fill]
+symbol = " "

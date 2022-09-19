@@ -22,3 +22,11 @@ function! Surround()
 endfunction
 
 vnoremap s :call Surround()<CR>
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>fr <cmd>Telescope oldfiles<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ht <cmd>Telescope colorscheme<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
