@@ -184,7 +184,7 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 import:
-  #  -  ~/.config/alacritty/colorschemes/green-on-black.yml
+  # -  ~/.config/alacritty/colorschemes/tomorrow-dark.yml
   -  ~/.config/alacritty/colorschemes/darkplus.yml
 
   # Cursor colors

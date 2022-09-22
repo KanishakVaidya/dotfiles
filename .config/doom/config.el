@@ -41,13 +41,17 @@
 (after! spell-fu
   (setq ispell-dictionary "en_US"))
 
-(after! company
+(after! company-mode
   (setq company-minimum-prefix-length 2
-        company-reftex-annotate-citations t))
+        company-reftex-annotate-citations t
+        company-backends '((company-capf :with company-yasnippet) company-dabbrev company-files)))
 
 (setq tex-fontify-script nil)
 (setq font-latex-fontify-script nil)
 (setq +latex-viewers '(zathura))
+
+(after! latex
+  (setq company-backends '(((company-capf :with company-yasnippet) company-dabbrev-code))))
 
 (evil-define-key 'normal dired-mode-map
   (kbd "M-RET") 'dired-display-file

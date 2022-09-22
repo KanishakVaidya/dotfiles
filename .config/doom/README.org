@@ -105,9 +105,10 @@ Using spell-fu instead of flyspell as spell-fu is faster.
 * Company mode
 Change minimum prefix length for company completion to be 1 letter
 #+begin_src emacs-lisp
-(after! company
+(after! company-mode
   (setq company-minimum-prefix-length 2
-        company-reftex-annotate-citations t))
+        company-reftex-annotate-citations t
+        company-backends '((company-capf :with company-yasnippet) company-dabbrev company-files)))
 #+end_src
 * Latex configuration
 ** Basic theming
@@ -129,6 +130,10 @@ I don't want superscript or subscript and preview PDF in zathura
       :desc "reftex-labels" "(" #'reftex-label))
 #+end_src
 ** Company backends
+#+begin_src emacs-lisp
+(after! latex
+  (setq company-backends '(((company-capf :with company-yasnippet) company-dabbrev-code))))
+#+end_src
 
 * Dired
 #+begin_src emacs-lisp

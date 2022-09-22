@@ -2,7 +2,7 @@
 add_newline = false
 
 format="""
-[$directory](bold cyan)$git_branch$git_status$git_state$git_commit $fill $cmd_duration
+[$directory](bold cyan)ॐ $git_branch$git_status$git_state$git_commit $fill $cmd_duration
 $character
 """
 
@@ -17,13 +17,13 @@ error_symbol = "[❯](#ee0000)"
 vimcmd_symbol = "[❮](#00dd00)"
 
 [directory]
-home_symbol = "ॐ "
+home_symbol = "~"
 truncate_to_repo = false
 
 [username]
 show_always = true 
 disabled = false
-format = "[$userॐ]($style) "
+format = "[$user]($style) "
 
 [fill]
 symbol = " "
