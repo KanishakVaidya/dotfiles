@@ -7,8 +7,8 @@ if [ -z ${BLOCK_BUTTON+x} ]; then
     changeto=$1
 else
     case $BLOCK_BUTTON in
-    	1) changeto='mute' ;;
-        2) changeto='nothing' ; pavucontrol-qt ;;
+    	2) changeto='mute' ;;
+        3) changeto='nothing' ; pavucontrol-qt ;;
     	4) changeto='increase' ;;
     	5) changeto='decrease' ;;
     esac

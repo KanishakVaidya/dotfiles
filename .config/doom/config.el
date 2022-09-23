@@ -1,7 +1,7 @@
 (setq user-full-name "Kanishak Vaidya"
       user-mail-address "kanishak@gmail")
 
-(setq doom-font (font-spec :family "Source Code Pro" :size 20 :weight 'Regular)
+(setq doom-font (font-spec :family "Hack" :size 20 :weight 'Regular)
       doom-variable-pitch-font (font-spec :family "Hack" :size 13))
 
 (custom-set-faces

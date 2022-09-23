@@ -1,7 +1,7 @@
 configuration {
   modi:  "window,combi,run";
   show-icons: true;
-  font: "source code pro medium 13";
+  font: "Hack 14";
   sidebar-mode: true;
   combi-modi: "drun,AppImages:~/.config/my_scripts/rofi_appimage.sh";
   combi-hide-mode-prefix: true;

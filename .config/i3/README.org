@@ -211,7 +211,7 @@ I am using i3blocks
 # BAR
 bar {
 	position top
-	font pango:Font Awesome 5 Free, Hack 11
+	font pango:Hack 11
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
     	colors {
         	background $back
@@ -265,7 +265,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id volumeicon
 exec --no-startup-id "feh --bg-fill --randomize --no-fehbg ~/pic/.wall/WALL*"
 exec --no-startup-id picom
-exec --no-startup-id /usr/bin/lxpolkit
+exec --no-startup-id /usr/bin/lxqt-policykit-agent
 exec --no-startup-id flameshot
 exec --no-startup-id clipit
 exec_always --no-startup-id killall conky ; conky

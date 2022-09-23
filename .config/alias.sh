@@ -65,11 +65,11 @@ export NOTES_DIR=$HOME/doc/notes
 # fuzzy-search through all available packages
 # with package info shown in a preview window
 # and then install selected packages
-alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' --preview-window 75% | xargs -ro sudo pacman -S"
 
 # List all your installed packages
 # and then remove selected packages
-alias pacr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias pacr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' --preview-window 75% | xargs -ro sudo pacman -Rns"
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
