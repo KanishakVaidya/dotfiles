@@ -23,7 +23,7 @@ esac
 
 vol=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '/Volume/{print $5+0}')
 if [[ $(pactl get-sink-mute @DEFAULT_SINK@) == "Mute: yes" ]]; then
-	echo "  Mute "
+	echo " 婢 Mute "
 	echo
 	echo $white
 	echo $back
