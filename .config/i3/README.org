@@ -313,14 +313,12 @@ mode "$dunst" {
 ** Frequent apps
 #+begin_src bash :tangle keys.conf
 bindsym $mod+o mode "$frequentapps"
-set $frequentapps (1)Signal, (2)SMPlayer, (3)RVGL, (4)Brave-Browser, (5)Brave(Tor) (6)OBS
+set $frequentapps (1)System-monitor, (2)VLC, (3)Text-editor, (4)Private Browser
 mode "$frequentapps" {
-    bindsym 1 exec signal-desktop , mode "default"
-    bindsym 2 exec smplayer , mode "default"
-    bindsym 3 exec (cd /opt/rvgl && ./rvgl) , mode "default"
-    bindsym 4 exec brave , mode "default"
-    bindsym 5 exec brave --tor , mode "default"
-    bindsym 6 exec obs , mode "default"
+    bindsym 1 exec alacritty -e htop , mode "default"
+    bindsym 2 exec vlc , mode "default"
+    bindsym 3 exec $editor , mode "default"
+    bindsym 4 exec $browser --private-window , mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
