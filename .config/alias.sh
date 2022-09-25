@@ -41,6 +41,9 @@ export HISTFILE="$XDG_STATE_HOME/zsh/history"
 # this line is added in /etc/zsh/zshenv
 # export ZDOTDIR="$HOME"/.config/zsh
 
+export PATH=$HOME/.local/bin:$PATH
+export NOTES_DIR=$HOME/doc/notes
+
 ############################
 ####### ALIASES ############
 ############################
@@ -57,10 +60,9 @@ alias fgrep='fgrep --colour=auto'
 alias btop='btop --utf-force'
 alias cmatrix='cmatrix -ba'
 
-alias dotgit='/usr/bin/git --git-dir=$HOME/.config/my_dotfiles --work-tree=$HOME'
-
-export PATH=$HOME/.local/bin:$PATH
-export NOTES_DIR=$HOME/doc/notes
+# GIT ALIASES
+alias .git='/usr/bin/git --git-dir=$HOME/.config/my_dotfiles --work-tree=$HOME'
+alias .gitadd=".git add \$(.git status | awk '/modified:/{print \$2}' | fzf --multi --preview 'git --git-dir=$HOME/.config/my_dotfiles --work-tree=$HOME diff {}')"
 
 # fuzzy-search through all available packages
 # with package info shown in a preview window
@@ -97,3 +99,5 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+pfetch

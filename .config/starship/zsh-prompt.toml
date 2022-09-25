@@ -2,7 +2,7 @@
 add_newline = false
 
 format="""
-[$directory](bold cyan)ॐ $git_branch$git_status$git_state$git_commit $fill $cmd_duration
+[$directory](#00afff)ॐ $git_branch$git_status$git_state$git_commit $fill $cmd_duration
 $character
 """
 

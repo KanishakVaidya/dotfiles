@@ -1,6 +1,8 @@
 set number
 set relativenumber
 set mouse=nv
+set linebreak
+set breakindent
 set incsearch
 set ignorecase
 set smartcase

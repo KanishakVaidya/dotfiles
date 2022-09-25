@@ -248,12 +248,13 @@ gaps inner 4
 gaps outer 0
 
 # configuring floating
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 for_window [class="xdman-Main"] floating enable
 for_window [class="java-lang-Thread"] floating enable
 for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable
 for_window [class="KeePassXC"] floating enable
 for_window [title="Microsoft Teams Notification"] floating enable
-for_window [class="zoom"] floating enable
 
 #+end_src
 
@@ -267,8 +268,7 @@ exec --no-startup-id "feh --bg-fill --randomize --no-fehbg ~/pic/.wall/WALL*"
 exec --no-startup-id picom
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 exec --no-startup-id flameshot
-exec --no-startup-id clipit
-exec_always --no-startup-id killall conky ; conky
+exec_always --no-startup-id killall conky ; sleep 1 ; conky
 #+end_src
 * My KeyBindings
 ** Application keybindings
@@ -313,11 +313,11 @@ mode "$dunst" {
 ** Frequent apps
 #+begin_src bash :tangle keys.conf
 bindsym $mod+o mode "$frequentapps"
-set $frequentapps (1)Signal, (2)SMPlayer, (3)Kate, (4)Brave-Browser, (5)Brave(Tor) (6)OBS
+set $frequentapps (1)Signal, (2)SMPlayer, (3)RVGL, (4)Brave-Browser, (5)Brave(Tor) (6)OBS
 mode "$frequentapps" {
     bindsym 1 exec signal-desktop , mode "default"
     bindsym 2 exec smplayer , mode "default"
-    bindsym 3 exec kate , mode "default"
+    bindsym 3 exec (cd /opt/rvgl && ./rvgl) , mode "default"
     bindsym 4 exec brave , mode "default"
     bindsym 5 exec brave --tor , mode "default"
     bindsym 6 exec obs , mode "default"
