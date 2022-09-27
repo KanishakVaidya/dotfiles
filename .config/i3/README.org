@@ -6,7 +6,7 @@
 Setting mod key and fonts for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
 #+begin_src bash :tangle config
 set $mod Mod4
-font pango:Hack 10
+font pango:Sans 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -211,7 +211,7 @@ I am using i3blocks
 # BAR
 bar {
 	position top
-	font pango:Hack 11
+	font pango:Monospace 11
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
     	colors {
         	background $back

@@ -7,19 +7,19 @@ window:
 
 font:
   normal:
-    family: Hack
+    family: Monospace
     style: Regular
 
   bold:
-    family: Hack
+    family: Monospace
     style: Bold
 
   italic:
-    family: Hack
+    family: Monospace
     style: Italic
 
   bold_italic:
-    family: Hack
+    family: Monospace
     style: Bold Italic
 
   size: 12
