@@ -6,3 +6,9 @@
       :desc "Show TOC" "=" #'reftex-toc
       :desc "reftex-citations" "[" #'reftex-citation
       :desc "reftex-labels" "(" #'reftex-label))
+
+(after! latex
+  (set-company-backend! 'latex-mode nil)
+  (set-company-backend! 'latex-mode '(company-files company-dabbrev :with company-capf company-yasnippet)
+    'company-reftex-labels 'company-reftex-citations
+    '(:separate company-dabbrev company-yasnippet company-ispell)))

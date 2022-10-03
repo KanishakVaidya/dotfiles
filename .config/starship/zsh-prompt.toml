@@ -2,7 +2,7 @@
 add_newline = false
 
 format="""
-[$directory](#00afff)ॐ $git_branch$git_status$git_state$git_commit $fill $cmd_duration
+$directoryॐ $git_branch$git_status$git_state$git_commit $fill $cmd_duration
 $character
 """
 
@@ -17,6 +17,7 @@ error_symbol = "[❯](#ee0000)"
 vimcmd_symbol = "[❮](#00dd00)"
 
 [directory]
+style = "bold cyan"
 home_symbol = "~"
 truncate_to_repo = false
 

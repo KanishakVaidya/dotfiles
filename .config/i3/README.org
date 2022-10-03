@@ -113,14 +113,14 @@ bindsym $mod+Shift+f floating toggle
 #+begin_src bash :tangle i3-specific.conf
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 : "
-set $ws2 "2 : "
-set $ws3 "3 : "
-set $ws4 "4 : "
-set $ws5 "5 : "
-set $ws6 "6 : "
-set $ws7 "7 : "
-set $ws8 "8 : "
+set $ws1 " 1 :  "
+set $ws2 " 2 :  "
+set $ws3 " 3 :  "
+set $ws4 " 4 :  "
+set $ws5 " 5 :  "
+set $ws6 " 6 :  "
+set $ws7 " 7 :  "
+set $ws8 " 8 :  "
 set $ws9 " 9 "
 set $ws10 " 10 "
 
@@ -211,7 +211,7 @@ I am using i3blocks
 # BAR
 bar {
 	position top
-	font pango:Monospace 11
+	font pango:SauceCodePro Nerd Font 11
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
     	colors {
         	background $back
@@ -366,8 +366,8 @@ interval=once
 signal=11
 
 [Battery]
-command=~/.config/my_scripts/battery.sh
-interval=60
+command=~/.config/my_scripts/battery-new.sh
+interval=30
 background=#151515
 
 [datetime]

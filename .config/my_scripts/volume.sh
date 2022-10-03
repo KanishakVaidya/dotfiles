@@ -37,7 +37,7 @@ elif [[ vol -lt 60  ]]; then
 	echo
 	echo $white
 	echo $back
-elif [[ vol -lt 105  ]]; then
+elif [[ vol -lt 101  ]]; then
 	echo "  $vol% "
 	echo
 	echo $white

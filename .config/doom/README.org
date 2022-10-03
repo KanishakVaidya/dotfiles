@@ -107,8 +107,7 @@ Change minimum prefix length for company completion to be 1 letter
 #+begin_src emacs-lisp
 (after! company-mode
   (setq company-minimum-prefix-length 2
-        company-reftex-annotate-citations t
-        company-backends '((company-capf :with company-yasnippet) company-dabbrev company-files)))
+        company-reftex-annotate-citations t))
 #+end_src
 * Latex configuration
 ** Basic theming
@@ -130,9 +129,19 @@ I don't want superscript or subscript and preview PDF in zathura
       :desc "reftex-labels" "(" #'reftex-label))
 #+end_src
 ** Company backends
-#+begin_src emacs-lisp
+As there is [[https://github.com/doomemacs/doomemacs/issues/5672][some issue]] with ~set-company-backend!~ so [[https://docs.doomemacs.org/latest/modules/completion/company/#enable-company-backends-certain-modes,code-1][this method]] of setting company backends don't work.
+#+begin_src emacs-lisp :tangle nil
 (after! latex
-  (setq company-backends '(((company-capf :with company-yasnippet) company-dabbrev-code))))
+  (set-company-backend! 'latex-mode nil)
+  (set-company-backend! 'latex-mode '(company-files company-dabbrev :with company-capf company-yasnippet)
+    'company-reftex-labels 'company-reftex-citations
+    '(:separate company-dabbrev company-yasnippet company-ispell)))
+#+end_src
+
+Therefore, I am using [[https://github.com/doomemacs/doomemacs/issues/5672#issuecomment-949466410][this meantime fix]] for setting ~company-backend~ in LaTeX-mode.
+#+begin_src emacs-lisp
+(setq-hook! 'LaTeX-mode-hook +lsp-company-backends '(:separate company-capf company-yasnippet
+ company-reftex-labels company-reftex-citations company-files company-dabbrev company-dabbrev-code)) 
 #+end_src
 
 * Dired

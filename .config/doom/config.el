@@ -43,15 +43,14 @@
 
 (after! company-mode
   (setq company-minimum-prefix-length 2
-        company-reftex-annotate-citations t
-        company-backends '((company-capf :with company-yasnippet) company-dabbrev company-files)))
+        company-reftex-annotate-citations t))
 
 (setq tex-fontify-script nil)
 (setq font-latex-fontify-script nil)
 (setq +latex-viewers '(zathura))
 
-(after! latex
-  (setq company-backends '(((company-capf :with company-yasnippet) company-dabbrev-code))))
+(setq-hook! 'LaTeX-mode-hook +lsp-company-backends '(:separate company-capf company-yasnippet
+ company-reftex-labels company-reftex-citations company-files company-dabbrev company-dabbrev-code))
 
 (evil-define-key 'normal dired-mode-map
   (kbd "M-RET") 'dired-display-file
