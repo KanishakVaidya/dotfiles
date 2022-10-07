@@ -6,7 +6,7 @@
 Setting mod key and fonts for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
 #+begin_src bash :tangle config
 set $mod Mod4
-font pango:Sans 10
+font pango:SauceCodePro Nerd Font 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -91,8 +91,8 @@ bindsym $mod+n workspace next
 bindsym $mod+b workspace prev
 bindsym $mod+Shift+n move container to workspace next ; workspace next
 bindsym $mod+Shift+b move container to workspace prev ; workspace prev
-bindsym $mod+Shift+greater move workspace to output right
-bindsym $mod+Shift+less move workspace to output left
+bindsym $mod+Shift+greater move workspace to output next
+bindsym $mod+Shift+less move workspace to output next
 
 # togg between vertical/horizontal orientation
 bindsym $mod+v split toggle

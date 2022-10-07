@@ -9,7 +9,7 @@ show_month() {
     posn=$3
 	option=$(echo "<<
 $(cal -v $mnth $year)
->>"| rofi -dmenu -p 'Calendar' -location 3 -yoffset 20 -lines 12 -selected-row $posn -theme flat-orange.rasi -theme-str 'window {width: 16%; lines: 12;}')
+>>"| rofi -dmenu -p 'Calendar' -location 3 -yoffset 25 -lines 12 -selected-row $posn -theme flat-orange.rasi -theme-str 'window {width: 16%; lines: 12;}')
 	case $option in
         ">>")
 			mnth=$((10#$mnth + 1))

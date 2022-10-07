@@ -48,6 +48,7 @@
 (setq tex-fontify-script nil)
 (setq font-latex-fontify-script nil)
 (setq +latex-viewers '(zathura))
+(setq-default TeX-master nil)
 
 (setq-hook! 'LaTeX-mode-hook +lsp-company-backends '(:separate company-capf company-yasnippet
  company-reftex-labels company-reftex-citations company-files company-dabbrev company-dabbrev-code))
