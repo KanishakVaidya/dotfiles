@@ -1,4 +1,4 @@
-echo " $(date '+ %a %b %d    %H:%M') "
+echo " $(date '+ %a %b %d  %H:%M') "
 echo 
 awk '/color14:/ {print $2}' ~/.Xresources
 awk '/background:/ {print $2}' ~/.Xresources

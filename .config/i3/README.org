@@ -14,15 +14,10 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+q kill
 
-include ~/.config/i3/vol-bright.conf
-include ~/.config/i3/i3-specific.conf
-include ~/.config/i3/look-feel.conf
-include ~/.config/i3/autostart.conf
-include ~/.config/i3/keys.conf
 #+end_src
 
 * Volume brightness and keyboard brightness control
-#+begin_src bash :tangle vol-bright.conf
+#+begin_src bash :tangle config
 # Volume Control
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -SIGRTMIN+11 i3blocks
@@ -41,7 +36,7 @@ bindsym XF86KbdBrightnessDown exec ~/.config/my_scripts/keyboard_bl.sh 'dec'
 
 * i3 Specific keybindings
 ** Reload Restart and Exit
-#+begin_src bash :tangle i3-specific.conf
+#+begin_src bash :tangle config
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -62,7 +57,7 @@ mode "$sysmenu" {
 }
 #+end_src
 ** Moving Windows
-#+begin_src bash :tangle i3-specific.conf
+#+begin_src bash :tangle config
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -110,7 +105,7 @@ bindsym $mod+Shift+f floating toggle
 
 #+end_src
 ** Workspaces
-#+begin_src bash :tangle i3-specific.conf
+#+begin_src bash :tangle config
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 " 1 :  "
@@ -150,7 +145,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #+end_src
 
 ** Resize i3 windows
-#+begin_src bash :tangle i3-specific.conf
+#+begin_src bash :tangle config
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -182,7 +177,7 @@ bindsym $mod+r mode "resize"
 
 * Theme
 ** Defining colors
-#+begin_src bash :tangle look-feel.conf
+#+begin_src bash :tangle config
 # COLORS
 set_from_resource $back    i3wm.background  "#151515"
 set_from_resource $fore    i3wm.foreground  "#d0d0d0"
@@ -197,7 +192,7 @@ set_from_resource $white   i3wm.color7      "#f5f5f5"
 #+end_src
 ** i3 bar
 I am using i3blocks
-#+begin_src bash :tangle look-feel.conf
+#+begin_src bash :tangle config
 # BAR
 bar {
 	position top
@@ -217,7 +212,7 @@ bar {
 }
 #+end_src
 ** Window borders
-#+begin_src bash :tangle look-feel.conf
+#+begin_src bash :tangle config
 # class                 border  	backgr. 	text		indicator 	child_border
 client.focused          $blue 	    $blue 	    $back	 	$red    	$blue
 client.focused_inactive $back    	$back   	$fore 	    $red    	$back
@@ -229,7 +224,7 @@ client.background       #ffffff
 title_align center
 #+end_src
 ** Gaps and Floating windows
-#+begin_src bash :tangle look-feel.conf
+#+begin_src bash :tangle config
 # Configuring Gaps
 for_window [class=".*"] border pixel 2
 smart_gaps on
@@ -249,11 +244,10 @@ for_window [title="Microsoft Teams Notification"] floating enable
 #+end_src
 
 * Autostart utilities
-#+begin_src bash :tangle autostart.conf
+#+begin_src bash :tangle config
 # Startup Utilities
 exec --no-startup-id dunst
-exec --no-startup-id nm-applet
-# exec --no-startup-id volumeicon
+# exec --no-startup-id nm-applet
 exec --no-startup-id "feh --bg-fill --randomize --no-fehbg ~/pic/.wall/WALL*"
 exec --no-startup-id picom
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
@@ -262,7 +256,7 @@ exec_always --no-startup-id killall conky ; sleep 1 ; conky
 #+end_src
 * My KeyBindings
 ** Application keybindings
-#+begin_src bash :tangle keys.conf
+#+begin_src bash :tangle config
 # Basic Default Application
 set $term alacritty
 set $browser firefox
@@ -284,7 +278,7 @@ bindsym $mod+space exec "rofi -show combi"
 bindsym $mod+Shift+space exec "rofi -modi Search:~/.config/my_scripts/search.sh -show Search -theme flat-orange"
 #+end_src
 ** Dunst keybindings
-#+begin_src bash :tangle keys.conf
+#+begin_src bash :tangle config
 # Dunst Control
 bindsym $mod+Shift+d mode "$dunst"
 set $dunst (c)lose, (C)lose all, (i)nformation, (h)istory
@@ -301,7 +295,7 @@ mode "$dunst" {
 #+end_src
 
 ** Frequent apps
-#+begin_src bash :tangle keys.conf
+#+begin_src bash :tangle config
 bindsym $mod+o mode "$frequentapps"
 set $frequentapps (1)System-monitor, (2)VLC, (3)Text-editor, (4)Private Browser
 mode "$frequentapps" {
@@ -316,7 +310,7 @@ mode "$frequentapps" {
 }
 #+end_src
 ** Screenshots
-#+begin_src bash :tangle keys.conf
+#+begin_src bash :tangle config
 bindsym Print exec "flameshot full -c -p ~/pic"
 bindsym $mod+Print mode "$screenshot"
 set $screenshot (s)creen, (S)creen Clipboard, (f)ull, (F)ull Clipboard, (a)rea, (A)rea save
@@ -356,11 +350,17 @@ interval=once
 signal=11
 
 [Battery]
-command=~/.config/my_scripts/battery-new.sh
+command=~/.config/my_scripts/battery.sh
 interval=30
 background=#151515
 
 [datetime]
 command=~/.config/my_scripts/date.sh
 interval=30
+
+[Network]
+command=~/.config/my_scripts/network.sh
+interval=3
+background=#151515
+
 #+end_src

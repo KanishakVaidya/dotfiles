@@ -4,15 +4,14 @@ white=$(awk '/color7:/ {print $2}' ~/.Xresources)
 back=$(awk '/background:/ {print $2}' ~/.Xresources)
 red=$(awk '/color1:/ {print $2}' ~/.Xresources)
 if [ -z ${BLOCK_BUTTON+x} ]; then
-    changeto=$1
-else
-    case $BLOCK_BUTTON in
-    	2) changeto='mute' ;;
-        3) changeto='nothing' ; pavucontrol-qt ;;
-    	4) changeto='increase' ;;
-    	5) changeto='decrease' ;;
-    esac
+    BLOCK_BUTTON=$1
 fi
+case $BLOCK_BUTTON in
+	2) changeto='mute' ;;
+    3) changeto='nothing' ; pavucontrol-qt ;;
+	4) changeto='increase' ;;
+	5) changeto='decrease' ;;
+esac
 case $changeto in
 	'increase')
         pactl set-sink-volume @DEFAULT_SINK@ +5% ;;
