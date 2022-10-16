@@ -33,13 +33,13 @@ window {
     // location:                    center;
     // anchor:                      center;
     fullscreen:                  false;
-    width:                       400px;
+    // width:                       400px;
     // x-offset:                    0px;
     // y-offset:                    0px;
     margin:                      0px;
     padding:                     0px;
     border:                      1px solid;
-    border-radius:               0px;
+    border-radius:               10px;
     border-color:                @background-alt;
     cursor:                      "default";
     background-color:            @background;
@@ -61,7 +61,7 @@ inputbar {
     spacing:                     10px;
     padding:                     0px;
     border:                      0px;
-    border-radius:               0px;
+    border-radius:               6px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -71,16 +71,16 @@ inputbar {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "";
+    str:                         " ";
     padding:                     10px 13px;
-    border-radius:               0px;
+    border-radius:               6px;
     background-color:            @urgent;
     text-color:                  @background;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
-    border-radius:               0px;
+    border-radius:               6px;
     background-color:            @active;
     text-color:                  @background;
 }
@@ -91,7 +91,7 @@ message {
     margin:                      0px;
     padding:                     10px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               6px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -122,7 +122,7 @@ element {
     enabled:                     true;
     padding:                     10px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               6px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;

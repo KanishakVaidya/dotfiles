@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Defining Colors
-blue=$(awk '/color12:/ {print $2}' ~/.Xresources)
 white=$(awk '/color15:/ {print $2}' ~/.Xresources)
 green=$(awk '/color10:/ {print $2}' ~/.Xresources)
 yellow=$(awk '/color3:/ {print $2}' ~/.Xresources)
@@ -17,7 +16,7 @@ case $stat in
 	Full) echo "  $levl% " ;;
 	Charging)
 		if [[ levl -lt 10  ]]; then
-			notify-send -u critical "Bhagwan Ke Naam pe Utha le re baba" -a BATTERY -t 30000
+			notify-send -u critical " Battery" "Bhagwan Ke Naam pe Utha le re baba" -a BATTERY -t 30000
 			echo "  $levl% "
 			echo
 			echo $orange
@@ -56,19 +55,19 @@ case $stat in
 	;;
 	Discharging)
 		if [[ levl -lt 5  ]]; then
-            notify-send -u critical "Khud e utha jana ab mene ek minute ke andar $(shutdown -P +1). shutdown -c hi bcha skta tujhe ab" -a BATTERY -t 30000
+            notify-send -u critical " Battery" "Khud e utha jana ab mene ek minute ke andar $(shutdown -P +1). shutdown -c hi bcha skta tujhe ab" -a BATTERY -t 30000
 			echo "  $levl% "
 			echo
 			echo $red
 			echo $back
 		elif [[ levl -lt 15  ]]; then
-			notify-send -u critical "Bhagwan Ke Naam pe Utha le re baba" -a BATTERY -t 30000
+			notify-send -u critical " Battery" "Bhagwan Ke Naam pe Utha le re baba" -a BATTERY -t 30000
 			echo "  $levl% "
 			echo
 			echo $red
 			echo $back
 		elif [[ levl -lt 25  ]]; then
-			notify-send -u critical "Bhagwan Ke Naam pe Utha le re baba" -a BATTERY -t 30000
+			notify-send -u critical " Battery" "Bhagwan Ke Naam pe Utha le re baba" -a BATTERY -t 30000
 			echo "  $levl% "
 			echo
 			echo $red

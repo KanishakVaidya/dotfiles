@@ -9,7 +9,7 @@ show_month() {
     posn=$3
 	option=$(echo "<<
 $(cal -v $mnth $year)
->>"| rofi -dmenu -p 'Calendar' -location 3 -yoffset 25 -lines 12 -selected-row $posn -theme flat-orange.rasi -theme-str 'window {width: 16%; lines: 12;}')
+>>"| rofi -dmenu -p 'Calendar' -location 3 -yoffset 25 -lines 12 -selected-row $posn -theme flat-orange.rasi -theme-str 'window {width: 320px; lines: 12;}')
 	case $option in
         ">>")
 			mnth=$((10#$mnth + 1))
@@ -34,5 +34,5 @@ $(cal -v $mnth $year)
 
 case $BLOCK_BUTTON in
     1) show_month $(date "+%m %Y") $(expr $(date +%w) + 2)  ;;			
-	3) cal -v $(date +%Y) | rofi -dmenu -location 3 -yoffset 20 -theme-str 'window {width: 40%;} listview {fixed-height: true; lines: 37;}' -theme flat-orange.rasi -selected-row $(expr \( \( $(date +%m) - 1 \) / 3 \) \* 9 + $(date +%w) + 3) ;;
+	3) cal -v $(date +%Y) | rofi -dmenu -location 3 -yoffset 20 -theme-str 'window {width: 768px;} listview {fixed-height: true; lines: 37;}' -theme flat-orange.rasi -selected-row $(expr \( \( $(date +%m) - 1 \) / 3 \) \* 9 + $(date +%w) + 3) ;;
 esac
