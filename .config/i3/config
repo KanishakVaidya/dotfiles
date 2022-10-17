@@ -123,17 +123,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# assign some workspaces to some displays
-set $displeft eDP
-set $disprght HDMI-A-0
-workspace $ws1 output $displeft
-workspace $ws2 output $displeft
-workspace $ws3 output $disprght
-workspace $ws4 output $displeft
-workspace $ws5 output $disprght
-workspace $ws6 output $disprght
-workspace $ws7 output $disprght
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -224,8 +213,7 @@ exec --no-startup-id "feh --bg-fill --randomize --no-fehbg ~/pic/.wall/WALL*"
 exec --no-startup-id picom
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 exec --no-startup-id flameshot
-exec --no-startup-id rclone mount --vfs-cache-mode full --daemon Mega_Notes:Notes/ $NOTES_DIR/Mega || notify-send -u critical "Mega notes mounts failed" -t 10000
-# exec_always --no-startup-id killall conky ; sleep 1 ; conky
+exec_always --no-startup-id killall -q conky ; sleep 1 ; conky
 
 # Basic Default Application
 set $term alacritty
@@ -262,14 +250,12 @@ mode "$dunst" {
 }
 
 bindsym $mod+o mode "$frequentapps"
-set $frequentapps (1)Signal, (2)SMPlayer, (3)RVGL, (4)Brave-Browser, (5)Brave(Tor) (6)OBS
+set $frequentapps (1)System-monitor, (2)VLC, (3)Text-editor, (4)Private Browser
 mode "$frequentapps" {
-    bindsym 1 exec signal-desktop , mode "default"
-    bindsym 2 exec smplayer , mode "default"
-    bindsym 3 exec (cd /opt/rvgl && ./rvgl) , mode "default"
-    bindsym 4 exec brave , mode "default"
-    bindsym 5 exec brave --tor , mode "default"
-    bindsym 6 exec obs , mode "default"
+    bindsym 1 exec alacritty -e htop , mode "default"
+    bindsym 2 exec vlc , mode "default"
+    bindsym 3 exec $editor , mode "default"
+    bindsym 4 exec $browser --private-window , mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
