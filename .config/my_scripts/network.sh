@@ -28,12 +28,12 @@ if [[ "$IF" = "" ]] || [[ "$(cat /sys/class/net/$IF/operstate)" = 'down' ]]; the
 
     exit
 elif [[ "$(cat /sys/class/net/$IF/operstate)" = 'up' ]]; then
-    [[ $IF == w* ]] && echo " 直 " || echo ""
+    [[ $IF == w* ]] && echo " 直 " || echo "  "
     echo ""
     echo $white
     echo $back
 
-    [[ $prev_state != connected  ]] && ( notify-send "Internet" "Connected to $(iwgetid -r)" & echo "connected" > /tmp/prev-connection-state )
+    [[ $prev_state != connected  ]] && ( notify-send "Internet" "Connected to $(iwgetid -r || echo Ethernet)" & echo "connected" > /tmp/prev-connection-state )
 
     exit
 fi
