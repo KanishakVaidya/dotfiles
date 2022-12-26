@@ -57,10 +57,10 @@ org-edit-src-code should open a new window
 #+begin_src emacs-lisp
 (setq org-export-with-broken-links t)
 (setq org-publish-project-alist
-      '(("github pages"
-         :base-directory "~/pc/PhD/Presentations/my-website"
+      '(("kvos"
+         :base-directory "~/doc/notes/arch-kvos"
          :base-extension "org"
-         :publishing-directory "~/pc/PhD/Presentations/my-website/kanishakvaidya.github.io"
+         :publishing-directory "~/doc/notes/arch-kvos/publish"
          :recursive t
          :publishing-function org-html-publish-to-html)
         ("Mega Notes"

@@ -1,2 +1,2 @@
-export QT_QPA_PLATFORMTHEME=qt5ct
+source ~/.xprofile
 exec i3

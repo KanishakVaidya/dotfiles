@@ -7,9 +7,10 @@ format="[$cmd_duration $directory](bold cyan)$git_branch$git_status$git_state$gi
 disabled = true
 
 [character]
-success_symbol = "[ॐ](#00dd00) "
-error_symbol = "[ॐ](#ee0000) "
+success_symbol = "[ॐ ](#00dd00)"
+error_symbol = "[ॐ ](#ee0000)"
 # 
+# ॐ
 
 [directory]
 home_symbol = "~"

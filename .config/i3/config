@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:SauceCodePro Nerd Font 10
+font pango:JetBrainsMono Nerd Font 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -165,7 +165,7 @@ set_from_resource $white   i3wm.color7      "#f5f5f5"
 # BAR
 bar {
 	position top
-	font pango:SauceCodePro Nerd Font 11
+	font pango:JetBrainsMono Nerd Font 11
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
     	colors {
         	background $back
@@ -209,7 +209,7 @@ for_window [title="Microsoft Teams Notification"] floating enable
 # Startup Utilities
 exec --no-startup-id dunst
 # exec --no-startup-id nm-applet
-exec --no-startup-id "feh --bg-fill --randomize --no-fehbg ~/pic/.wall/WALL*"
+exec --no-startup-id "feh --bg-fill --randomize --no-fehbg /usr/share/backgrounds/kvos-wallpapers/*"
 exec --no-startup-id picom
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 exec --no-startup-id flameshot

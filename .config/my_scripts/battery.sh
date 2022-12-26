@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Defining Colors
-white=$(awk '/color15:/ {print $2}' ~/.Xresources)
-green=$(awk '/color10:/ {print $2}' ~/.Xresources)
+white=$(awk '/color7:/ {print $2}' ~/.Xresources)
+green=$(awk '/color2:/ {print $2}' ~/.Xresources)
 yellow=$(awk '/color3:/ {print $2}' ~/.Xresources)
 orange=$(awk '/color11:/ {print $2}' ~/.Xresources)
-red=$(awk '/color9:/ {print $2}' ~/.Xresources)
+red=$(awk '/color1:/ {print $2}' ~/.Xresources)
 back=$(awk '/background:/ {print $2}' ~/.Xresources)
 
 
@@ -16,7 +16,6 @@ case $stat in
 	Full) echo "  $levl% " ;;
 	Charging)
 		if [[ levl -lt 10  ]]; then
-			notify-send -u critical " Battery" "Bhagwan Ke Naam pe Utha le re baba" -a BATTERY -t 30000
 			echo "  $levl% "
 			echo
 			echo $orange
@@ -54,8 +53,8 @@ case $stat in
 		fi
 	;;
 	Discharging)
-		if [[ levl -lt 5  ]]; then
-            notify-send -u critical " Battery" "Khud e utha jana ab mene ek minute ke andar $(shutdown -P +1). shutdown -c hi bcha skta tujhe ab" -a BATTERY -t 30000
+		if [[ levl -lt 10  ]]; then
+            notify-send -u critical " Battery" "Khud e utha jana ab mene ek minute ke andar. shutdown -c hi bcha skta tujhe ab" -a BATTERY -t 30000 ; shutdown now
 			echo "  $levl% "
 			echo
 			echo $red
