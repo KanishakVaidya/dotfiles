@@ -6,7 +6,7 @@
 Setting mod key and fonts for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
 #+begin_src bash :tangle config
 set $mod Mod4
-font pango:SauceCodePro Nerd Font 10
+font pango:JetBrainsMono Nerd Font 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -196,7 +196,7 @@ I am using i3blocks
 # BAR
 bar {
 	position top
-	font pango:SauceCodePro Nerd Font 11
+	font pango:JetBrainsMono Nerd Font 11
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
     	colors {
         	background $back
@@ -248,7 +248,7 @@ for_window [title="Microsoft Teams Notification"] floating enable
 # Startup Utilities
 exec --no-startup-id dunst
 # exec --no-startup-id nm-applet
-exec --no-startup-id "feh --bg-fill --randomize --no-fehbg ~/pic/.wall/WALL*"
+exec --no-startup-id "feh --bg-fill --randomize --no-fehbg /usr/share/backgrounds/kvos-wallpapers/*"
 exec --no-startup-id picom
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 exec --no-startup-id flameshot
@@ -331,7 +331,7 @@ mode "$screenshot" {
 * i3blocks config
 #+begin_src bash :tangle i3blocks.conf
 # Global properties
-separator=true
+separator=false
 separator_block_width=5
 
 [Brightness]
