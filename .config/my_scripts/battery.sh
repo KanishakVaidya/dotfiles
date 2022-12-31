@@ -53,7 +53,7 @@ case $stat in
 		fi
 	;;
 	Discharging)
-		if [[ levl -lt 10  ]]; then
+		if [[ levl -lt 5 ]]; then
             notify-send -u critical " Battery" "Khud e utha jana ab mene ek minute ke andar. shutdown -c hi bcha skta tujhe ab" -a BATTERY -t 30000 ; shutdown now
 			echo "  $levl% "
 			echo

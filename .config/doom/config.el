@@ -22,22 +22,6 @@
 
 (setq org-src-window-setup 'other-frame)
 
-(setq org-export-with-broken-links t)
-(setq org-publish-project-alist
-      '(("github pages"
-         :base-directory "~/pc/PhD/Presentations/my-website"
-         :base-extension "org"
-         :publishing-directory "~/pc/PhD/Presentations/my-website/kanishakvaidya.github.io"
-         :recursive t
-         :publishing-function org-html-publish-to-html)
-        ("Mega Notes"
-         :base-directory "~/doc/notes/Mega"
-         :base-extension "org"
-         :exclude "sync-dir/.*"
-         :publishing-directory "~/doc/notes/Mega/sync-dir"
-         :recursive t
-         :publishing-function org-md-publish-to-md)))
-
 (after! spell-fu
   (setq ispell-dictionary "en_US"))
 
@@ -57,10 +41,3 @@
   (kbd "M-RET") 'dired-display-file
   (kbd "h") 'dired-up-directory
   (kbd "l") 'dired-find-file) ; use dired-find-file instead of dired-open.
-
-(setq rmh-elfeed-org-files '("~/.config/doom/elfeed.org"))
-
-(after! elfeed
-  (setq elfeed-search-filter "@1-week-ago"))
-
-;; (add-hook! 'elfeed-search-mode-hook #'elfeed-update)

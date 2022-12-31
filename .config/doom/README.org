@@ -53,24 +53,6 @@ org-edit-src-code should open a new window
 #+begin_src emacs-lisp
 (setq org-src-window-setup 'other-frame)
 #+end_src
-** Org Publish
-#+begin_src emacs-lisp
-(setq org-export-with-broken-links t)
-(setq org-publish-project-alist
-      '(("kvos"
-         :base-directory "~/doc/notes/arch-kvos"
-         :base-extension "org"
-         :publishing-directory "~/doc/notes/arch-kvos/publish"
-         :recursive t
-         :publishing-function org-html-publish-to-html)
-        ("Mega Notes"
-         :base-directory "~/doc/notes/Mega"
-         :base-extension "org"
-         :exclude "sync-dir/.*"
-         :publishing-directory "~/doc/notes/Mega/sync-dir"
-         :recursive t
-         :publishing-function org-md-publish-to-md)))
-#+end_src
 * Package configuration notes
 Whenever you reconfigure a package, make sure to wrap your config in an `after!' block, otherwise Doom's defaults may override your settings. E.g.
 
@@ -151,19 +133,4 @@ Therefore, I am using [[https://github.com/doomemacs/doomemacs/issues/5672#issue
   (kbd "M-RET") 'dired-display-file
   (kbd "h") 'dired-up-directory
   (kbd "l") 'dired-find-file) ; use dired-find-file instead of dired-open.
-#+end_src
-* Elfeed
-Elfeed is a great RSS feed reader. I'll user elfeed-org to configure elfeed better
-** My elfeed-org directory
-#+begin_src emacs-lisp
-(setq rmh-elfeed-org-files '("~/.config/doom/elfeed.org"))
-#+end_src
-** Elfeed only show feeds from last one week
-#+begin_src emacs-lisp
-(after! elfeed
-  (setq elfeed-search-filter "@1-week-ago"))
-#+end_src
-** Automatic feed update
-#+begin_src emacs-lisp
-;; (add-hook! 'elfeed-search-mode-hook #'elfeed-update)
 #+end_src
