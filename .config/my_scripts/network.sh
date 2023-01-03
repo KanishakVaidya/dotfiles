@@ -24,7 +24,7 @@ if [[ "$IF" = "" ]] || [[ "$(cat /sys/class/net/$IF/operstate)" = 'down' ]]; the
     echo $grey
     echo $back
 
-    [[ $prev_state == connected  ]] && ( notify-send "Internet" "Disconnected" & echo "disconnected" > /tmp/prev-connection-state )
+    [[ $prev_state == connected  ]] && ( notify-send "Internet" "Disconnected" & echo "disconnected" > /tmp/prev-connection-state ) || true
 
     exit
 elif [[ "$(cat /sys/class/net/$IF/operstate)" = 'up' ]]; then
@@ -33,7 +33,7 @@ elif [[ "$(cat /sys/class/net/$IF/operstate)" = 'up' ]]; then
     echo $white
     echo $back
 
-    [[ $prev_state != connected  ]] && ( notify-send "Internet" "Connected to $(iwgetid -r || echo network)" & echo "connected" > /tmp/prev-connection-state )
+    [[ $prev_state != connected  ]] && ( notify-send "Internet" "Connected to $(iwgetid -r || echo network)" & echo "connected" > /tmp/prev-connection-state ) || true
 
     exit
 fi
