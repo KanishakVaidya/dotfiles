@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo " $(date '+ %a %b %d  %H:%M') "
 echo 
 awk '/color14:/ {print $2}' ~/.Xresources
@@ -31,6 +33,9 @@ $(cal -v $mnth $year)
 	exit
 		}	
 
+if [ -z ${BLOCK_BUTTON+x} ]; then
+    BLOCK_BUTTON=$1
+fi
 
 case $BLOCK_BUTTON in
     1) show_month $(date "+%m %Y") $(expr $(date +%w) + 2)  ;;			
