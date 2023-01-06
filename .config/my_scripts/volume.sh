@@ -7,7 +7,7 @@ if [ -z ${BLOCK_BUTTON+x} ]; then
     BLOCK_BUTTON=$1
 fi
 case $BLOCK_BUTTON in
-	2) changeto='mute' ;;
+	1) changeto='mute' ;;
     3) changeto='nothing' ; pavucontrol-qt ;;
 	4) changeto='increase' ;;
 	5) changeto='decrease' ;;

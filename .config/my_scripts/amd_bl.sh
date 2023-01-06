@@ -6,26 +6,17 @@
 # ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl0", RUN+="/bin/chmod a+w /sys/class/backlight/%k/brightness"
 
 if [ -z ${BLOCK_BUTTON+x} ]; then
-    changeto=$1
-else
-    case $BLOCK_BUTTON in
-    	4) 
-            changeto='increase'
-    	;;
-    	5) 
-            changeto='decrease'
-    	;;
-    esac
+    BLOCK_BUTTON=$1
 fi
 brightness=$(awk '{print}' /sys/class/backlight/amdgpu_bl*/brightness)
 
-case $changeto in
-	'increase') 
+case $BLOCK_BUTTON in
+	4) 
 		if [[ $brightness -lt 255 ]]; then
 			echo $(awk "BEGIN {print $brightness + 5; exit}") > /sys/class/backlight/amdgpu_bl*/brightness ;
 		fi
 	;;
-	'decrease') 
+	5) 
 		if [[ $brightness -gt 20 ]]; then
 			echo $(awk "BEGIN {print $brightness - 5; exit}") > /sys/class/backlight/amdgpu_bl*/brightness ;
 		fi
