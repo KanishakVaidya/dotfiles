@@ -43,5 +43,6 @@ export HISTFILE="$XDG_STATE_HOME/zsh/history"
 
 export PATH=$HOME/.local/bin:$PATH
 export NOTES_DIR=$HOME/doc/notes
+export EDITOR=nvim
 
 export QT_QPA_PLATFORMTHEME=qt5ct

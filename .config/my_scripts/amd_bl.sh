@@ -8,22 +8,28 @@
 if [ -z ${BLOCK_BUTTON+x} ]; then
     BLOCK_BUTTON=$1
 fi
-brightness=$(awk '{print}' /sys/class/backlight/amdgpu_bl*/brightness)
+
+brand=$(ls /sys/class/backlight/ | head -n 1)
+
+max_brightness=$(awk '{print}' /sys/class/backlight/$brand/max_brightness)
+min_brightness=$(expr $max_brightness \/ 12)
+brightness=$(awk '{print}' /sys/class/backlight/$brand/brightness)
+step=$(expr $max_brightness \/ 51)
 
 case $BLOCK_BUTTON in
 	4) 
-		if [[ $brightness -lt 255 ]]; then
-			echo $(awk "BEGIN {print $brightness + 5; exit}") > /sys/class/backlight/amdgpu_bl*/brightness ;
+		if [[ $brightness -lt $max_brightness ]]; then
+			echo $(awk "BEGIN {print $brightness + $step; exit}") > /sys/class/backlight/$brand/brightness ;
 		fi
 	;;
 	5) 
-		if [[ $brightness -gt 20 ]]; then
-			echo $(awk "BEGIN {print $brightness - 5; exit}") > /sys/class/backlight/amdgpu_bl*/brightness ;
+		if [[ $brightness -gt $min_brightness ]]; then
+			echo $(awk "BEGIN {print $brightness - $step; exit}") > /sys/class/backlight/$brand/brightness ;
 		fi
 	;;
 esac
 
-awk '{print "  " $1 " "}' /sys/class/backlight/amdgpu_bl*/brightness
+awk '{print "  " $1 " "}' /sys/class/backlight/$brand/brightness
 echo
 awk '/color3:/ {print $2}' ~/.Xresources
 awk '/background:/ {print $2}' ~/.Xresources
