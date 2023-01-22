@@ -4,8 +4,8 @@
 *.cursorColor:  #c5c8c6
 
 ! black
-*.color0:       #1e1e1e
-*.color8:       #505050
+*.color0:       #111111
+*.color8:       #404040
 
 ! red
 *.color1:       #f44747
