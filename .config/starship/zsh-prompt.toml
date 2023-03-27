@@ -2,11 +2,9 @@
 add_newline = false
 
 format="""
-$directoryॐ $git_branch$git_status$git_state$git_commit $fill $cmd_duration
+$directory$hostnameॐ $git_branch$git_status$git_state$git_commit $fill $cmd_duration
 $character
 """
-
-
 ## Make prompt a single line instead of two lines
 [line_break]
 disabled = false
@@ -21,10 +19,11 @@ style = "bold cyan"
 home_symbol = "~"
 truncate_to_repo = false
 
-[username]
-show_always = true 
-disabled = false
-format = "[$user]($style) "
-
 [fill]
 symbol = " "
+
+[hostname]
+ssh_only = true
+ssh_symbol = '肋'
+format = '[$ssh_symbol](bold purple)[$hostname](bold yellow) '
+disabled = false

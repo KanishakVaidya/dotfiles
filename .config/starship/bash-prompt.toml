@@ -1,7 +1,7 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
-format="[$cmd_duration $directory](bold cyan)$git_branch$git_status$git_state$git_commit$character"
+format='\[[$hostname@ $directory](bold cyan)$git_branch$git_status$git_state$git_commit\] $character'
 ## Make prompt a single line instead of two lines
 [line_break]
 disabled = true
@@ -16,10 +16,11 @@ error_symbol = "[ॐ ](#ee0000)"
 home_symbol = "~"
 truncate_to_repo = false
 
-[username]
-show_always = true 
-disabled = false
-format = "[$user]($style)"
-
 [fill]
 symbol = " "
+
+[hostname]
+ssh_only = false
+ssh_symbol = '肋'
+format = '[$ssh_symbol](bold purple)[$hostname](bold yellow) '
+disabled = false
