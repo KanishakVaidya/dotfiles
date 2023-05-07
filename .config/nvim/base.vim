@@ -16,4 +16,5 @@ let maplocalleader = ' '
 filetype plugin indent on
 syntax on
 hi MatchParen cterm=bold ctermbg=none ctermfg=red   
+set clipboard=unnamedplus
 " let g:tex_flavor = "latex"

@@ -20,12 +20,14 @@ esac
 red=$(awk '/color1:/ {print $2}' ~/.Xresources)
 background=$(awk '/background:/ {print $2}' ~/.Xresources)
 
-echo "  $(setxkbmap -query | awk '/layout/{print $2}') "
-echo
 if [[ $(xset q | awk '/Caps Lock/{print $4}') == 'off' ]]; then
+    echo "  $(setxkbmap -query | awk '/layout/{print $2}') "
+    echo
 	echo $red
 	echo $background
 else
+    echo "  $(setxkbmap -query | awk '/layout/{print toupper($2)}') "
+    echo
 	echo $background
 	echo $red
 fi

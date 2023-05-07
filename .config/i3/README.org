@@ -42,11 +42,10 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+x exec i3lock -t -i ~/pic/.wall/lock*
-bindsym $mod+Shift+x mode "$sysmenu"
+bindsym $mod+x exec i3lock -t -i ~/pic/kvos-lock.png
 set $sysmenu (l)ock, (L)ogout, (P)oweroff, (R)eboot
 mode "$sysmenu" {
-    bindsym l exec "i3lock -t -i ~/pic/lock.png", mode "default"
+    bindsym l exec "i3lock -c 111111", mode "default"
     bindsym Shift+l exec "i3-msg exit", mode "default"
     bindsym Shift+p exec "shutdown now", mode "default"
     bindsym Shift+r exec reboot, mode "default"
@@ -55,6 +54,7 @@ mode "$sysmenu" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+bindsym $mod+Shift+x mode "$sysmenu"
 #+end_src
 ** Moving Windows
 #+begin_src bash :tangle config
