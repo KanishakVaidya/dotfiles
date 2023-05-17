@@ -161,7 +161,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Explorer
-noremap <F3> :CocCommand explorer<CR>
+noremap <F3> :CocCommand coc-explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " Enter should select the coc.completion candidate

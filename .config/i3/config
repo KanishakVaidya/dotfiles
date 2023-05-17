@@ -1,45 +1,18 @@
+# Set Super/Windows/Logo key as the modifire key
 set $mod Mod4
 font pango:JetBrainsMono Nerd Font 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# kill focused window
-bindsym $mod+q kill
-
-# Volume Control
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -SIGRTMIN+11 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -SIGRTMIN+11 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -SIGRTMIN+11 i3blocks
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -SIGRTMIN+11 i3blocks
-
-# Screen Brightness Control
-bindsym XF86MonBrightnessUp exec ~/.config/my_scripts/amd_bl.sh 'increase' && pkill -SIGRTMIN+11 i3blocks
-bindsym XF86MonBrightnessDown exec ~/.config/my_scripts/amd_bl.sh 'decrease' && pkill -SIGRTMIN+11 i3blocks
-
-# Keyboard Brightness Control
-bindsym XF86KbdBrightnessUp exec ~/.config/my_scripts/keyboard_bl.sh 'inc'
-bindsym XF86KbdBrightnessDown exec ~/.config/my_scripts/keyboard_bl.sh 'dec'
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+x exec i3lock -c 111111
-set $sysmenu (l)ock, (L)ogout, (P)oweroff, (R)eboot
-mode "$sysmenu" {
-    bindsym l exec "i3lock -c 111111", mode "default"
-    bindsym Shift+l exec "i3-msg exit", mode "default"
-    bindsym Shift+p exec "shutdown now", mode "default"
-    bindsym Shift+r exec reboot, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+Shift+x mode "$sysmenu"
+# Separate files to configure
+# keybindings
+include ~/.config/i3/keys.conf
+# Startup/autostart utilities
+include ~/.config/i3/autostart.conf
+# Your Personal configuration
+# (concky/system information launches form here)
+include ~/.config/i3/myPersonal.conf
 
 # change focus
 bindsym $mod+h focus left
@@ -65,26 +38,24 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# Other Window movements
 bindsym $mod+n workspace next
 bindsym $mod+b workspace prev
 bindsym $mod+Shift+n move container to workspace next ; workspace next
 bindsym $mod+Shift+b move container to workspace prev ; workspace prev
-bindsym $mod+Shift+greater move workspace to output next
-bindsym $mod+Shift+less move workspace to output next
 
-# togg between vertical/horizontal orientation
+# togg where the next window should appear
+# toggles between botton and right
 bindsym $mod+v split toggle
 
-# enter fullscreen mode for the focused container
+# Fullscreen and floating modifiers
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f floating toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+d layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+f floating toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -123,6 +94,10 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Move workspace between monitor
+bindsym $mod+Shift+greater move workspace to output next
+bindsym $mod+Shift+less move workspace to output next
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -142,6 +117,17 @@ mode "resize" {
         bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
 
+        # Do same thing, but faster
+        bindsym Control+h resize shrink width 15 px or 15 ppt
+        bindsym Control+j resize grow height 15 px or 15 ppt
+        bindsym Control+k resize shrink height 15 px or 15 ppt
+        bindsym Control+l resize grow width 15 px or 15 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Control+Left resize shrink width 15 px or 15 ppt
+        bindsym Control+Down resize grow height 15 px or 15 ppt
+        bindsym Control+Up resize shrink height 15 px or 15 ppt
+        bindsym Control+Right resize grow width 15 px or 15 ppt
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -205,75 +191,3 @@ for_window [class="java-lang-Thread"] floating enable
 for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable
 for_window [class="KeePassXC"] floating enable
 for_window [title="Microsoft Teams Notification"] floating enable
-
-# Startup Utilities
-exec --no-startup-id dunst
-# exec --no-startup-id nm-applet
-exec --no-startup-id "feh --bg-fill --randomize --no-fehbg /usr/share/backgrounds/kvos-wallpapers/*"
-exec --no-startup-id picom
-exec --no-startup-id /usr/bin/lxqt-policykit-agent
-exec --no-startup-id flameshot
-exec_always --no-startup-id killall -q conky ; sleep 1 ; conky
-
-# Basic Default Application
-set $term alacritty
-set $browser firefox
-set $fileapp pcmanfm-qt
-set $editor emacs || geany
-
-# My KeyBuindings
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $browser
-bindsym $mod+Control+Return exec $browser --private-window
-bindsym $mod+Mod1+Return exec brave --tor
-bindsym $mod+e exec $fileapp
-bindsym $mod+t exec $editor
-bindsym $mod+Shift+o exec rofi-open
-bindsym $mod+p exec ~/.config/my_scripts/displays.sh
-bindsym $mod+Shift+p exec arandr
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+space exec "rofi -show combi"
-bindsym $mod+Shift+space exec "rofi -modi Search:~/.config/my_scripts/search.sh -show Search -theme flat-orange"
-
-# Dunst Control
-bindsym $mod+Shift+d mode "$dunst"
-set $dunst (c)lose, (C)lose all, (i)nformation, (h)istory
-mode "$dunst" {
-    bindsym c exec dunstctl close , mode "default"
-    bindsym Shift+c exec dunstctl close-all , mode "default"
-    bindsym i exec dunstctl context , mode "default"
-    bindsym h exec dunstctl history-pop , mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+o mode "$frequentapps"
-set $frequentapps (1)System-monitor, (2)VLC, (3)Text-editor, (4)Private Browser
-mode "$frequentapps" {
-    bindsym 1 exec alacritty -e htop , mode "default"
-    bindsym 2 exec vlc , mode "default"
-    bindsym 3 exec $editor , mode "default"
-    bindsym 4 exec $browser --private-window , mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym Print exec "flameshot full -c -p ~/pic"
-bindsym $mod+Print mode "$screenshot"
-set $screenshot (s)creen, (S)creen Clipboard, (f)ull, (F)ull Clipboard, (a)rea, (A)rea save
-mode "$screenshot" {
-    bindsym s exec --no-startup-id "flameshot screen -p ~/pic", mode "default"
-    bindsym Shift+s exec --no-startup-id "flameshot screen -c", mode "default"
-    bindsym f exec --no-startup-id "flameshot full -p ~/pic", mode "default"
-    bindsym Shift+f exec --no-startup-id "flameshot full -c", mode "default"
-    bindsym a exec --no-startup-id "flameshot gui", mode "default"
-    bindsym Shift+a exec --no-startup-id "flameshot gui -p ~/pic", mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
