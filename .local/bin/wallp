@@ -1,0 +1,2 @@
+#! /bin/sh
+ls /usr/share/backgrounds/kvos-wallpapers/* | fzf --preview="feh --bg-fill --no-fehbg {}" --preview-window=0%
