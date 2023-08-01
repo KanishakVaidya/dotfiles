@@ -1,13 +1,13 @@
 ############################
 # xdg-ninja specifications #
 ############################
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_STATE_HOME=$HOME/.local/state
-export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # Set BAT as the manpager
-which bat >> /dev/null && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+which bat >> /dev/null && export MANROFFOPT="-c" && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # $HOME/.bash_history
 export HISTFILE="${XDG_STATE_HOME}/bash/history"
@@ -44,8 +44,8 @@ export HISTFILE="$XDG_STATE_HOME/zsh/history"
 # this line is added in /etc/zsh/zshenv
 # export ZDOTDIR="$HOME"/.config/zsh
 
-export PATH=$HOME/.local/bin:$PATH
-export NOTES_DIR=$HOME/doc/notes
+export PATH="$HOME/.local/bin:$PATH"
+export NOTES_DIR="$HOME/doc/notes"
 export EDITOR=nvim
 
 export QT_QPA_PLATFORMTHEME=qt5ct

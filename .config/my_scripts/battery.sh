@@ -28,7 +28,7 @@ stat=$(cat /sys/class/power_supply/BAT0/status)
 levl=$(cat /sys/class/power_supply/BAT0/capacity)
 
 case $stat in
-	Full) text="  $levl% " ;;
+	Full) text=" $levl%" ;;
 	Charging)
         text=" ${char_icon[0]} $levl% "
 		color="${colors[0]}"
@@ -36,7 +36,7 @@ case $stat in
 		do
 			if [[ $levl == $i? ]]
 			then
-				text=" ${char_icon[$i]} $levl% "
+				text="${char_icon[$i]} $levl%"
 			fi
 		done
 	;;
@@ -47,22 +47,24 @@ case $stat in
 		elif [[ levl -lt 25  ]]; then
 			notify-send -u critical " Battery" "Bhagwan Ke Naam pe Utha le re baba" -a BATTERY -t 30000
 		fi
-        text=" ${disc_icon[0]} $levl% "
+        text=" ${disc_icon[0]} $levl%"
 		color="${cloros[0]}"
 		for i in {1..10}
 		do
 			if [[ $levl == $i? ]]
 			then
-				text=" ${disc_icon[$i]} $levl% "
+				text=" ${disc_icon[$i]} $levl%"
 				color="${colors[$i]}"
 			fi
 		done
 	;;
-	"Not charging") text="  $levl% ";;
-    *) text="  ??? " ;;
+	"Not charging") 
+        text=" $levl%"
+        color='#d4d4d4';;
+    *) text=" ??? " ;;
 esac
 
-echo " $text"
+echo " $text "
 echo 
 echo $color
 echo '#1e1e1e'
