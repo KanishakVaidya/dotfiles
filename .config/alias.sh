@@ -2,10 +2,10 @@
 ####### ALIASES ############
 ############################
 
-alias ls="exa --color=auto"
-alias lsa="exa -a --color=auto"
-alias ll="exa -lh --color=auto"
-alias lla="exa -lha --color=auto"
+alias ls="eza --color=auto"
+alias lsa="eza -a --color=auto"
+alias ll="eza -lh --color=auto"
+alias lla="eza -lha --color=auto"
 alias vim="nvim"
 alias cp="cp -i"                          # confirm before overwriting something
 alias grep='grep --colour=auto'
