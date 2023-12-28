@@ -1,0 +1,27 @@
+import = ["~/.config/alacritty/colorschemes/xresources.toml"]
+
+[font]
+size = 14
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 0
+y = 0
